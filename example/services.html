@@ -1,0 +1,86 @@
+<co-nav-title title="Services"></co-nav-title>
+
+<div class="row">
+  <div class="col-lg-6">
+    <div id="service-highlighter" class="panel co-fx-box-shadow-heavy">
+      <div class="panel-heading">
+        <h1>highlighterSvc</h1>
+      </div>
+      <div class="panel-body">
+        <a href="#" ng-click="highlightMe($event)">highlight me</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div id="service-breakpoint" class="panel co-fx-box-shadow-heavy">
+      <div class="panel-heading">
+        <h1>breakpointSvc</h1>
+      </div>
+      <div class="panel-body">
+        <p>resize the window</p>
+        <p>current size: <span>{{windowSize}}</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-6">
+    <div id="service-scroller" class="panel co-fx-box-shadow-heavy">
+      <div class="panel-heading">
+        <h1>scrollerSvc</h1>
+      </div>
+      <div class="panel-body">
+        <a href="#" ng-click="scrollToMe($event)">scroll to me</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div id="service-document-visibility" class="panel co-fx-box-shadow-heavy">
+      <div class="panel-heading">
+        <h1>documentVisibilitySvc</h1>
+      </div>
+      <div class="panel-body">
+        <p>emits an event whenever the tab goes out of focus. try switching tabs.</p>
+        <p>"is hidden" history: <strong>{{visibilityHistory}}</strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-lg-6">
+    <div id="service-poller" class="panel co-fx-box-shadow-heavy">
+      <div class="panel-heading">
+        <h1>pollerSvc</h1>
+      </div>
+      <div class="panel-body">
+        <span>poll result: {{pollValue}}</span>
+        <div>
+          <a href="#" ng-click="startPoller()">start poller</a>
+          <a href="#" ng-click="stopPoller()">stop poller</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div id="service-cookie" class="panel co-fx-box-shadow-heavy">
+      <div class="panel-heading">
+        <h1>cookieSvc</h1>
+      </div>
+      <div class="panel-body">
+        <div>
+          cookie name: "example-cookie"
+        </div>
+        <div>
+          cookie value: <input ng-model="cookieValue" type="text"/>
+        </div>
+        <a href="#" ng-click="setCookie()">set cookie</a>
+        <a href="#" ng-click="removeCookie()">remove cookie</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+

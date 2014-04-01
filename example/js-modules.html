@@ -1,0 +1,133 @@
+<co-nav-title title="JS Modules"></co-nav-title>
+
+<div class="row">
+  <div class="col-lg-6">
+    <div id="module-loader" class="panel co-fx-box-shadow-heavy">
+      <div class="panel-heading">
+        <h1>co-loader</h1>
+      </div>
+      <div class="panel-body">
+        <div style="position:relative;border:solid 1px #ccc; width:100px;height:100px;">
+          <co-loader></co-loader>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div id="module-inline-loader" class="panel co-fx-box-shadow-heavy">
+      <div class="panel-heading">
+        <h1>co-inline-loader</h1>
+      </div>
+      <div class="panel-body">
+        <co-inline-loader></co-inline-loader>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-6">
+    <div id="module-toast" class="panel co-fx-box-shadow-heavy">
+      <div class="panel-heading">
+        <h1>co-toast</h1>
+      </div>
+      <div class="panel-body">
+        <p>The toast widget listens for any notification service messages</p>
+        <a href="#" ng-click="toastSvc.info('some info text')">display info message</a>
+        <br/>
+        <a href="#" ng-click="toastSvc.error('some error text')">display error message</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div id="module-cog" class="panel co-fx-box-shadow-heavy">
+      <div class="panel-heading">
+        <h1>co-cog</h1>
+      </div>
+      <div class="panel-body">
+        <p>size: large, anchor: left</p>
+        <co-cog options="cogOptions" size="large" anchor="left"></co-cog>
+        <p>size: small, anchor: right</p>
+        <co-cog options="cogOptions" size="small" anchor="right"></co-cog>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-lg-6">
+    <div id="module-btn-bar" class="panel co-fx-box-shadow-heavy">
+      <div class="panel-heading">
+        <h1>co-btn-bar</h1>
+      </div>
+      <div class="panel-body">
+        Button Bar auto hides/shows/disables/enables the submit/cancel buttons.
+        <co-btn-bar complete-promise="btnBarPromise">
+          <co-api-error promise="btnBarPromise"></co-api-error>
+          <button type="submit" class="btn btn-primary" ng-click="generateBtnBarPromise()">Do Stuff</button>
+          <button type="button" class="btn btn-link">Cancel</button>
+        </co-btn-bar>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div id="module-error-message" class="panel co-fx-box-shadow-heavy">
+      <div class="panel-heading">
+        co-error-message
+      </div>
+      <div class="panel-body">
+        <div><a href="#" ng-click="generateErrorMessagePromise()">generate promise</a></div>
+        <div><co-error-message message="that was bad...mkay" promise="errorMessagePromise"></co-error-message></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-lg-6">
+    <div id="module-text-copy" class="panel co-fx-box-shadow-heavy">
+      <div class="panel-heading">
+        <h1>co-text-copy</h1>
+      </div>
+      <div class="panel-body">
+        <input co-text-copy type="text" value="click to select me"/>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div id="module-donut" class="panel co-fx-box-shadow-heavy">
+      <div class="panel-heading">
+        <h1>co-donut</h1>
+      </div>
+      <div class="panel-body">
+        <co-donut color="blue" percent="0.55"></co-donut>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-lg-6">
+    <div id="module-svg" class="panel co-fx-box-shadow-heavy">
+      <div class="panel-heading">
+        <h1>co-svg</h1>
+      </div>
+      <div class="panel-body">
+        <div>
+          <co-svg src="/coreos.svg/logo.svg" width="100" height="30"></co-svg>
+        </div>
+        <div>
+          <co-svg class="co-img-icon" src="/coreos.svg/icon-reboot.svg"></co-svg> icon-reboot
+          <co-svg class="co-img-icon" src="/coreos.svg/icon-back.svg"></co-svg> icon-back
+          <co-svg class="co-img-icon" src="/coreos.svg/icon-delete.svg"></co-svg> icon-delete
+          <co-svg class="co-img-icon" src="/coreos.svg/icon-add.svg"></co-svg> icon-add
+          <co-svg class="co-img-icon" src="/coreos.svg/icon-right-arrow.svg"></co-svg> icon-right-arrow
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

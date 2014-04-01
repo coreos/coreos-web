@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" ng-app="app">
+
+  <head co-favicons>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title co-title co-title-suffix=" · CoreOS">CoreOS</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/bootstrap.css">
+    <link rel="stylesheet" href="../dist/coreos.css">
+    <link rel="stylesheet" href="../dist/font-awesome.css">
+  </head>
+
+  <body class="co-img-bg-hexagons">
+
+    <co-footer-wrapper>
+      <co-navbar>
+        <ul class="nav navbar-nav">
+          <co-navbar-link href="/example">Home</co-navbar-link>
+          <co-navbar-link href="/example/js-modules">JS Modules</co-navbar-link>
+          <co-navbar-link href="/example/css-modules">CSS Modules</co-navbar-link>
+          <co-navbar-link href="/example/services">Services</co-navbar-link>
+        </ul>
+        <!-- optional dropdown menu -->
+        <co-navbar-dropdown text="Navbar Dropdown">
+          <li><a href="#">Stuff</a></li>
+        </co-navbar-dropdown>
+      </co-navbar>
+      <div id="co-l-view-container" class="container" ng-view></div>
+    </co-footer-wrapper>
+
+    <co-footer>
+      <co-footer-link href="https://coreos.com/docs" icon-class="fa fa-book">Documentation</co-footer-link>
+      <co-footer-link href="irc://irc.freenode.org:6667/#coreos/" icon-class="fa fa-comment">IRC #coreos</co-footer-link>
+    </co-footer>
+
+    <co-toast></co-toast>
+
+    <!-- deps -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+    <script src="../bower_components/angular-resource/angular-resource.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="../bower_components/underscore/underscore.js"></script>
+    <script src="../bower_components/underscore.string/lib/underscore.string.js"></script>
+    <script src="../bower_components/d3/d3.js"></script>
+
+    <!-- coreos-web -->
+    <script src="../dist/templates-html.js"></script>
+    <script src="../dist/templates-svg.js"></script>
+    <script src="../src/shims.js"></script>
+    <script src="../src/coreos.js"></script>
+    <script src="../src/event.js"></script>
+    <script src="../src/const.js"></script>
+    <script src="../src/filter/utc.js"></script>
+    <script src="../src/service/config.js"></script>
+    <script src="../src/service/poller.js"></script>
+    <script src="../src/service/highlighter.js"></script>
+    <script src="../src/service/cookie.js"></script>
+    <script src="../src/service/interceptor-error.js"></script>
+    <script src="../src/service/interceptor-mutate.js"></script>
+    <script src="../src/service/document-visibility.js"></script>
+    <script src="../src/service/util/math.js"></script>
+    <script src="../src/service/util/time.js"></script>
+    <script src="../src/service/util/array.js"></script>
+    <script src="../src/service/breakpoint.js"></script>
+    <script src="../src/service/scroller.js"></script>
+    <script src="../src/ui/navbar/navbar.js"></script>
+    <script src="../src/ui/footer/footer.js"></script>
+    <script src="../src/ui/nav-title/nav-title.js"></script>
+    <script src="../src/ui/inline-loader/inline-loader.js"></script>
+    <script src="../src/ui/loader/loader.js"></script>
+    <script src="../src/ui/click-nav/click-nav.js"></script>
+    <script src="../src/ui/toast/toast.js"></script>
+    <script src="../src/ui/title/title.js"></script>
+    <script src="../src/ui/favicons/favicons.js"></script>
+    <script src="../src/ui/cog/cog.js"></script>
+    <script src="../src/ui/btn-bar/btn-bar.js"></script>
+    <script src="../src/ui/error-message/error-message.js"></script>
+    <script src="../src/ui/text-copy/text-copy.js"></script>
+    <script src="../src/ui/donut/donut.js"></script>
+    <script src="../src/ui/svg/svg.js"></script>
+
+
+    <!-- example -->
+    <script src="app.js"></script>
+    <script src="main-page-ctrl.js"></script>
+    <script src="js-modules-ctrl.js"></script>
+    <script src="css-modules-ctrl.js"></script>
+    <script src="services-ctrl.js"></script>
+  </body>
+
+</html>
