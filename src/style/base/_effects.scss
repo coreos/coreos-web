@@ -1,0 +1,19 @@
+/**
+ * Reusable non-layout effects styles used across many modules.
+ */
+
+.co-fx-box-shadow {
+  @include box-shadow(0 2px 2px rgba(0,0,0,0.2));
+}
+
+.co-fx-box-shadow-heavy {
+  @include box-shadow(0px 2px 2px rgba(0, 0, 0, 0.4));
+}
+
+.co-fx-box-shadow-super-heavy {
+  @include box-shadow(0px 5px 15px rgba(0, 0, 0, 0.5));
+}
+
+.co-fx-text-shadow {
+  @include text-shadow(rgba(0,0,0,0.25) 1px 1px 2px);
+}

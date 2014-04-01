@@ -1,0 +1,83 @@
+@include co-x-custom-font(
+  'Source Sans Pro',
+  'sourcesanspro-regular-webfont',
+  400,
+  normal
+);
+
+@include co-x-custom-font(
+  'Source Sans Pro',
+  'sourcesanspro-black-webfont',
+  900,
+  normal
+);
+
+@include co-x-custom-font(
+  'Source Sans Pro',
+  'sourcesanspro-blackitalic-webfont',
+  900,
+  italic
+);
+
+@include co-x-custom-font(
+  'Source Sans Pro',
+  'sourcesanspro-bold-webfont',
+  700,
+  normal
+);
+
+@include co-x-custom-font(
+  'Source Sans Pro',
+  'sourcesanspro-bolditalic-webfont',
+  700,
+  italic
+);
+
+@include co-x-custom-font(
+  'Source Sans Pro',
+  'sourcesanspro-extralight-webfont',
+  200,
+  normal
+);
+
+@include co-x-custom-font(
+  'Source Sans Pro',
+  'sourcesanspro-extralightitalic-webfont',
+  200,
+  italic
+);
+
+@include co-x-custom-font(
+  'Source Sans Pro',
+  'sourcesanspro-italic-webfont',
+  400,
+  italic
+);
+
+@include co-x-custom-font(
+  'Source Sans Pro',
+  'sourcesanspro-light-webfont',
+  300,
+  normal
+);
+
+@include co-x-custom-font(
+  'Source Sans Pro',
+  'sourcesanspro-lightitalic-webfont',
+  300,
+  italic
+);
+
+@include co-x-custom-font(
+  'Source Sans Pro',
+  'sourcesanspro-semibold-webfont',
+  600,
+  normal
+);
+
+@include co-x-custom-font(
+  'Source Sans Pro',
+  'sourcesanspro-semibolditalic-webfont',
+  600,
+  italic
+);

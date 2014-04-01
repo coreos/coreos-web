@@ -1,0 +1,22 @@
+.co-m-message {
+  @include border-radius(1px);
+  padding: 5px 0px 5px 10px;
+  color: $white;
+  font-size: 81%;
+}
+
+.co-m-message__close {
+  margin-top: 1px;
+  margin-right: 8px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.co-m-message--error {
+  background-color: $color-message-error-bg;
+}
+
+.co-m-message--info {
+  background-color: $color-message-info-bg;
+}

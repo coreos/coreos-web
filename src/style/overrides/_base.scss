@@ -1,0 +1,54 @@
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6  {
+  font-family: $font-family-primary;
+}
+
+h1,
+.h1 {
+  font-size: 112%;
+}
+
+h2,
+.h2 {
+  font-size: 93%;
+}
+
+h3,
+.h3 {
+  font-size: 89%;
+}
+
+h4,
+.h4 {
+  font-size: 85%;
+}
+
+h5,
+.h5 {
+  font-size: 81%;
+}
+
+h5,
+.h5 {
+  font-size: 81%;
+}
+
+small {
+  font-size: 80%;
+}
+
+dl {
+  margin: 0px;
+}
+
+.control-label {
+  line-height: 30px;
+}
+
+.help-block {
+  margin-bottom: 0px;
+}
+
+.glyphicon {
+  color: $color-icon-light;
+}

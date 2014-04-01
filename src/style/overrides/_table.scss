@@ -1,0 +1,36 @@
+.table {
+  margin-bottom: 0px;
+
+  thead > tr > th {
+    border-bottom: 0px;
+  }
+
+  th {
+    color: $color-table-header;
+    font-size: 80%;
+    text-transform: uppercase;
+    font-weight: 300;
+    padding-top: 0px !important;
+  }
+
+  tr:last-child {
+    border-bottom: 1px solid $color-table-border;
+  }
+
+  td {
+    font-size: 80%;
+    border-color: $color-table-border !important;
+    vertical-align: middle !important;
+
+    input[type="radio"], input[type="checkbox"] {
+      margin-top: 0px;
+      vertical-align: middle;
+    }
+  }
+
+}
+
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th {
+  background-color: $color-table-active;
+}

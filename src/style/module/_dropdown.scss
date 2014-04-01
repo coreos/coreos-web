@@ -1,0 +1,13 @@
+.co-m-dropdown--dark {
+  background-color: $color-bg-translucent-dark;
+  border: solid 1px $color-bg-translucent-dark;
+
+  // Super-specific for bootstrap overrides.
+  > li > a {
+    color: $white;
+    &:hover {
+      background-color: $color-bg-translucent-dark;
+      color: $white;
+    }
+  }
+}

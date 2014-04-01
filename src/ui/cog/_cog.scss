@@ -1,0 +1,32 @@
+.co-m-cog {
+  position: relative;
+  color: $gray;
+  display: inline-block;
+  &:hover {
+    cursor: pointer;
+  }
+  &.open .co-m-cog__icon {
+    color: $color-cog-active;
+  }
+}
+
+// icon
+.co-m-cog__icon {
+  vertical-align: middle;
+}
+.co-m-cog__icon--size-large {
+  font-size: 140%;
+}
+.co-m-cog__icon--size-small {
+  font-size: 125%;
+}
+
+// dropdown
+.co-m-cog__dropdown--anchor-left {
+  left: 0px;
+  right: auto;
+}
+.co-m-cog__dropdown--anchor-right {
+  right: 0px;
+  left: auto;
+}

@@ -1,0 +1,15 @@
+.co-m-navbar {
+  background-color: $color-bg-primary;
+  margin: 0;
+  padding-left: 10px;
+}
+
+.co-m-navbar__logo {
+  width: 129px;
+  height: 30px;
+  line-height: 64px;
+}
+
+.co-m-navbar--right-dropdown:hover {
+  cursor: pointer;
+}

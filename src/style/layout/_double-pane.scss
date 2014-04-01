@@ -1,0 +1,34 @@
+.co-l-double-pane {
+  .co-l-double-pane__col {
+    padding: 30px;
+    border-bottom: solid 1px $color-border;
+  }
+}
+
+@include co-x-media-min($screen-md-min) {
+  .co-l-double-pane {
+
+    border-collapse: collapse;
+    display: table;
+    width: 100%;
+
+    .co-l-double-pane__row {
+      display: table-row;
+      height: 100%;
+      border-bottom: solid 1px $color-border;
+    }
+
+    .co-l-double-pane__col {
+      display: table-cell;
+      float: none;
+      padding: 30px;
+      width: 50%;
+      border-bottom: none;
+      + .co-l-double-pane__col {
+        border-left: solid 1px $color-border;
+      }
+    }
+
+  }
+
+}

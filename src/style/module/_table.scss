@@ -1,0 +1,25 @@
+ .co-m-table {
+
+  .co-m-table-selected-row {
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    padding-right: 15px;
+    background-color: $color-table-active;
+  }
+
+  .co-m-table-interact-entire-element:hover {
+    cursor: pointer;
+  }
+
+}
+
+.co-m-stacked-cell {
+
+  .co-m-stacked-cell-secondary, .co-m-stacked-cell-primary {
+    line-height: 20px;
+  }
+  .co-m-stacked-cell-secondary {
+    color: $color-text-muted;
+  }
+
+}

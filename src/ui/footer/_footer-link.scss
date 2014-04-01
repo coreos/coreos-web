@@ -1,0 +1,13 @@
+.co-m-footer-link {
+  font-size: 81%;
+  margin-right: 20px;
+  line-height: 41px;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.co-m-footer-link--icon {
+  padding-right: 5px;
+  color: $color-footer-icons;
+}

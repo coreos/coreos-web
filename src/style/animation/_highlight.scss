@@ -1,0 +1,25 @@
+.co-an-highlight {
+  @include co-x-animation(
+    $name: highlightInOut,
+    $duration: 4s,
+    $timingFunction: linear,
+    $delay: 0,
+    $direction: normal,
+    $iterationCount: 1,
+    $fillMode: both
+  );
+  outline-style: solid;
+  outline-width: 5px;
+  outline-color: transparent;
+}
+
+@include co-x-keyframes(highlightInOut) {
+  0%, 50% {
+    outline-color: $color-bg-highlight;
+    background-color: $color-bg-highlight;
+  }
+  100% {
+    background-color: inherit;
+    outline-color: transparent;
+  }
+}

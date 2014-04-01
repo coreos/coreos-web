@@ -1,0 +1,6 @@
+.co-img-bg-hexagons {
+  background: url($img-path + '/hexagons.png') left top repeat,
+      linear-gradient(30deg, $blue-dark, $green) no-repeat left top fixed;
+  background-color: $blue-dark;
+  background-size: auto, 100% 100%;
+}

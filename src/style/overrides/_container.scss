@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+@include co-x-media-min($screen-xs-min) {
+  .container {
+    width: 99%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

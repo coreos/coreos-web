@@ -1,0 +1,33 @@
+.co-m-google-signin {
+}
+
+.co-m-google-signin__btn {
+  display: inline-block;
+  background: #dd4b39;
+  border: none;
+  color: white;
+  width: 120px;
+  border-radius: 3px;
+  white-space: nowrap;
+  &:hover {
+    background: #e74b37;
+    cursor: hand;
+  }
+}
+
+.co-m-google-signin__icon {
+  background: url($img-path + '/google-plus.png') transparent 0 50% no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+  width: 40px;
+  height: 24px;
+  border-right: #bb3f30 1px solid;
+}
+
+.co-m-google-signin__btn-text {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 8px;
+  font-size: 12px;
+  font-family: 'Roboto',arial,sans-serif;
+}

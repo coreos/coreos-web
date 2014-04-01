@@ -1,0 +1,15 @@
+.co-m-modal-link {
+  position: relative;
+  padding-right: 9px;
+
+  &:after {
+    content: "\203a";
+    font-weight: 900;
+    color: $gray;
+    font-size: 112%;
+    position: absolute;
+    bottom: -1px;
+    right: 0px;
+    pointer-events: none;
+  }
+}

@@ -1,0 +1,43 @@
+.co-an-fade-in-out {
+  @include transition-property(opacity);
+  @include transition-duration(0.2s);
+  @include transition-timing-function(linear);
+
+  // For ng-show and ng-hide.
+
+  &.ng-hide-add,
+  &.ng-hide-remove {
+    display: block!important;
+  }
+
+  &.ng-hide-add.ng-hide-add-active,
+  &.ng-hide-remove {
+    opacity: 0;
+  }
+
+  &.ng-hide-add,
+  &.ng-hide-remove.ng-hide-remove-active {
+    opacity: 1;
+  }
+
+
+  // For ng-repeat.
+
+  &.ng-enter,
+  &.ng-move {
+    opacity: 0;
+  }
+
+  &.ng-enter.ng-enter-active,
+  &.ng-move.ng-move-active {
+    opacity: 1;
+  }
+
+  &.ng-leave {
+    opacity: 1;
+  }
+  &.ng-leave.ng-leave-active {
+    opacity: 0;
+  }
+
+}

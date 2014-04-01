@@ -1,0 +1,42 @@
+body {
+  background-color: $color-bg-mute;
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+}
+
+a {
+  color: $blue;
+}
+
+button:focus,
+a:focus {
+  outline-style: none;
+}
+
+dt {
+  text-transform: uppercase;
+  color: $color-text-muted;
+  font-weight: 300;
+  font-size: 80%;
+}
+
+dd {
+  margin-bottom: 15px;
+}
+dd:last-child {
+  margin-bottom: 0px;
+}
+
+h2 {
+  font-size: 110%;
+}
+
+.modal {
+  .form-row {
+    margin-bottom: 20px;
+  }
+
+  .form-row:last-child {
+    margin-bottom: 0px;
+  }
+}

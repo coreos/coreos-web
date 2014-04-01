@@ -1,0 +1,51 @@
+.co-m-panel,
+.co-m-panel-padded {
+  min-height: 200px;
+
+  h1, h2, h3, h4 {
+    margin-top: 0;
+  }
+
+  .panel-heading {
+    background-color: $color-bg-primary;
+    padding: 30px;
+
+    h1, h2, h3, h4 {
+      margin: 0;
+    }
+    h4 {
+      line-height: 24px;
+    }
+  }
+
+  .co-m-panel-body-content {
+    padding: 0 15px 30px 15px;
+  }
+
+  .co-m-panel-content-left {
+    padding: 30px;
+    border-bottom: solid 1px $color-border;
+  }
+
+  .co-m-panel-content-right {
+    padding: 30px;
+  }
+
+  @include co-x-media-min($screen-lg-min) {
+    .co-m-panel-content-right {
+      border-left: solid 1px $color-border;
+    }
+
+    .co-m-panel-content-left {
+      border-bottom: none;
+    }
+  }
+
+}
+
+.co-m-panel-padded {
+  .panel-body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+}

@@ -1,0 +1,9 @@
+.co-m-invisible-input {
+  border: 0;
+  background: none;
+  width: 100%;
+  outline: 0;
+  &:hover {
+    cursor: copy;
+  }
+}

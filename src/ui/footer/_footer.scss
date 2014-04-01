@@ -1,0 +1,8 @@
+@include sticky-footer($height-footer, '#co-l-footer-wrapper', '#co-l-footer-push', '#co-l-footer');
+
+#co-l-footer {
+  background-color: $color-bg-primary;
+  margin: 0;
+  min-height: $height-footer;
+  overflow: hidden;
+}

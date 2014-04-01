@@ -1,0 +1,8 @@
+.panel,
+.modal-content {
+  @include border-radius(0);
+}
+
+.panel {
+  border: 0px;
+}

@@ -1,0 +1,7 @@
+<div class="co-m-toast">
+  <div ng-repeat="message in messages"
+      class="co-m-toast__message co-m-message co-m-message--{{message.type}} co-an-fade-in-out co-fx-box-shadow">
+    {{message.text}}
+    <span ng-click="dismiss($index)" class="pull-right glyphicon glyphicon-remove text-right co-m-message__close"></span>
+  </div>
+</div>
