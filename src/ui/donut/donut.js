@@ -89,7 +89,7 @@ angular.module('coreos.ui')
       function updateValue() {
         var displayValue;
         if (_.isNumber(scope.percent)) {
-          displayValue = Math.round(scope.percent * 100) + '%';
+          displayValue = Math.floor(scope.percent * 100) + '%';
         } else {
           displayValue = '?';
         }
@@ -119,14 +119,10 @@ angular.module('coreos.ui')
         scope.el.svg.remove();
       });
 
-      if (scope.percent) {
-        render();
-      }
+      render();
 
       scope.$watch('percent', function() {
-        if (!scope.isRendered) {
-          render();
-        } else {
+        if (scope.isRendered) {
           updateValue();
         }
       });

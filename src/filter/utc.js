@@ -1,5 +1,7 @@
-angular.module('coreos.filters').filter('utc', function(_) {
-  'use strict';
+'use strict';
+
+angular.module('coreos.filters')
+.filter('utc', function(_) {
 
   function convertToUtc(date) {
     return new Date(date.getUTCFullYear(),
@@ -13,6 +15,9 @@ angular.module('coreos.filters').filter('utc', function(_) {
   return function(input) {
     if (_.isNumber(input)) {
       return convertToUtc(new Date(input));
+    }
+    if (_.isString(input)) {
+      return convertToUtc(new Date(Date.parse(input)));
     }
     if (_.isDate(input)) {
       return convertToUtc(input);
