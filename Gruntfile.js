@@ -28,7 +28,7 @@ module.exports = function(grunt) {
 
     concurrent: {
       dev: {
-        tasks: ['watch', /*'test-watch'*/],
+        tasks: ['watch', 'test-watch'],
         options: {
           logConcurrentOutput: true
         }
@@ -155,7 +155,7 @@ module.exports = function(grunt) {
     sass: {
       coreos: {
         options: {
-          includePaths: ['ext/style/'],
+          includePaths: ['src/sass', 'src/sass/mixin'],
           outputStyle: 'nested'
         },
         files: {
@@ -207,7 +207,11 @@ module.exports = function(grunt) {
         dest: 'dist/coreos.css',
       },
       js: {
-        src: ['src/**/*.js', 'dist/*.js'],
+        src: [
+          'src/**/*.js',
+          '!src/**/*.test.js',
+          'dist/*.js'
+        ],
         dest: 'dist/coreos.js',
       }
     },
@@ -243,6 +247,22 @@ module.exports = function(grunt) {
           cwd: 'src/img',
           src: ['**'],
           dest: 'dist/img'
+        }]
+      },
+      svg: {
+        files: [{
+          expand: true,
+          cwd: 'src/svg',
+          src: ['**'],
+          dest: 'dist/img'
+        }]
+      },
+      'sass': {
+        files: [{
+          expand: true,
+          cwd: 'src/sass',
+          src: ['*.scss', 'mixin/**/*.scss', 'compass/**/*.scss'],
+          dest: 'dist/sass'
         }]
       }
     },
@@ -313,6 +333,8 @@ module.exports = function(grunt) {
     'uglify',
     'copy:fonts',
     'copy:images',
+    'copy:svg',
+    'copy:sass',
     'clean:postDist'
   ]);
 

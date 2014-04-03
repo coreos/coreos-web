@@ -20,7 +20,9 @@ angular.module('coreos.services')
      */
     'responseError': function(rejection) {
       if (!rejection.config.supressNotifications) {
-        $rootScope.$broadcast(CORE_EVENT.RESP_ERROR, rejection, parseMessage());
+        $rootScope.$broadcast(CORE_EVENT.RESP_ERROR,
+          rejection,
+          parseMessage(rejection));
       }
       return $q.reject(rejection);
     }

@@ -4,3 +4,7 @@
   background-color: $blue-dark;
   background-size: auto, 100% 100%;
 }
+
+.co-img-bg-right-arrow {
+  background: url($img-path + '/icon-right-arrow.svg');
+}

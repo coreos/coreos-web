@@ -2,58 +2,59 @@
 @import "compass/css3";
 @import "compass/layout/sticky-footer";
 
+
 /* Config */
-@import "style/color-pallette";
-@import "style/config";
+@import "color-pallette";
+@import "config";
 
 /* Mixins */
-@import "style/mixin/media-query";
-@import "style/mixin/keyframes";
-@import "style/mixin/animation";
-@import "style/mixin/custom-font";
-@import "style/mixin/prefix";
+@import "mixin/media-query";
+@import "mixin/keyframes";
+@import "mixin/animation";
+@import "mixin/custom-font";
+@import "mixin/prefix";
 
 /* Bootstrap Overrides */
-@import "style/overrides/base";
-@import "style/overrides/btn";
-@import "style/overrides/container";
-@import "style/overrides/dropdown";
-@import "style/overrides/form";
-@import "style/overrides/modal";
-@import "style/overrides/nav";
-@import "style/overrides/panel";
-@import "style/overrides/table";
-@import "style/overrides/tooltip";
+@import "common/overrides/base";
+@import "common/overrides/btn";
+@import "common/overrides/container";
+@import "common/overrides/dropdown";
+@import "common/overrides/form";
+@import "common/overrides/modal";
+@import "common/overrides/nav";
+@import "common/overrides/panel";
+@import "common/overrides/table";
+@import "common/overrides/tooltip";
 
 /* Base */
-@import "style/base/base";
-@import "style/base/backgrounds";
-@import "style/base/fonts";
-@import "style/base/effects";
-@import "style/base/icons";
-@import "style/base/ng-form";
+@import "common/base/base";
+@import "common/base/backgrounds";
+@import "common/base/fonts";
+@import "common/base/effects";
+@import "common/base/icons";
+@import "common/base/ng-form";
+@import "common/base/text";
+@import "common/base/graphs";
 
 /* Animations */
-@import "style/animation/fade";
-@import "style/animation/highlight";
+@import "common/animation/fade";
+@import "common/animation/highlight";
 
 /* Layouts */
-@import "style/layout/page";
-@import "style/layout/double-pane";
+@import "common/layout/page";
+@import "common/layout/double-pane";
 
-/* CSS-only UI Modules */
-@import "style/module/primary-action";
-@import "style/module/gauge";
-@import "style/module/modal-link";
-@import "style/module/page-title";
-@import "style/module/panel";
-@import "style/module/message";
-@import "style/module/invisible-input";
-@import "style/module/text";
-@import "style/module/dropdown";
-@import "style/module/table";
-
-/* JS UI Modules */
+/* Reusable Modules */
+@import "ui/link/modal-link";
+@import "ui/input/invisible-input";
+@import "ui/signin/google";
+@import "ui/primary-action/primary-action";
+@import "ui/panel/panel";
+@import "ui/page-title/page-title";
+@import "ui/message/message";
+@import "ui/gauge/gauge";
+@import "ui/dropdown/dropdown";
+@import "ui/table/table";
 @import "ui/navbar/navbar";
 @import "ui/navbar/navbar-link";
 @import "ui/footer/footer";
