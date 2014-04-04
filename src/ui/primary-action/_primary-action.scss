@@ -2,4 +2,8 @@
   color: $white;
   font-size: $font-size-md;
   font-weight: 200;
+  &:hover,
+  &:visited {
+    color: $white;
+  }
 }

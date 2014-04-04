@@ -194,6 +194,7 @@ angular.module('coreos.services').provider('pollerSvc', function() {
 
           // When scope is prvided automatically pause polling when tab
           // loses visability.
+          // TODO: add pauseAll() function and move this to app.run()
           options.scope.$on(CORE_EVENT.DOC_VISIBILITY_CHANGE,
               function(e, isHidden) {
             if (isHidden) {

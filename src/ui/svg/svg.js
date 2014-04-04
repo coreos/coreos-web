@@ -1,16 +1,17 @@
 /**
  * @fileoverview
  * Directive to easily inline svg images.
+ * NOTE: kind of a hack to get ng-include to work properly within a directive
+ * without wrapping it with an extra DOM element.
  */
 
 'use strict';
 
 angular.module('coreos.ui')
-.directive('coSvg', function() {
+.directive('coSvg', function($, $rootScope, $compile) {
 
   return {
-    templateUrl: '/coreos.ui/svg/svg.html',
-    transclude: false,
+    template: '<div></div>',
     restrict: 'E',
     replace: true,
     scope: {
@@ -18,15 +19,28 @@ angular.module('coreos.ui')
       width: '@',
       height: '@'
     },
-    link: function(scope, elem) {
-      scope.style = {};
+    link: function(scope, elem, attrs) {
+      var containerEl, html, newScope;
+      newScope = $rootScope.$new();
+      html = '<div class="co-m-svg" '+
+              'ng-class="classes" ng-style="style" ng-include="src"></div>';
+      newScope.style = {};
       if (scope.width) {
-        scope.style.width = scope.width + 'px';
+        newScope.style.width = scope.width + 'px';
       }
       if (scope.height) {
-        scope.style.height = scope.height + 'px';
+        newScope.style.height = scope.height + 'px';
       }
-      elem.append();
+      if (attrs.class) {
+        newScope.classes = attrs.class;
+      }
+      scope.$watch('src', function(src) {
+        if (src) {
+          newScope.src = src;
+          containerEl = $compile(html)(newScope);
+          elem.replaceWith(containerEl);
+        }
+      });
     }
   };
 

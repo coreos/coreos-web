@@ -46,7 +46,7 @@ angular.module('coreos.ui')
         // Keep track of added DOM elements.
         scope.el = {};
 
-        scope.el.svg = d3.select(elem.find('.co-m-guage__content')[0])
+        scope.el.svg = d3.select(elem.find('.co-m-gauge__content')[0])
           .append('svg')
           .attr('width', scope.width)
           .attr('height', scope.height)
@@ -87,13 +87,11 @@ angular.module('coreos.ui')
        * Update the value of the donut chart.
        */
       function updateValue() {
-        var displayValue;
-        if (_.isNumber(scope.percent)) {
-          displayValue = Math.floor(scope.percent * 100) + '%';
-        } else {
-          displayValue = '?';
+        if (!_.isNumber(scope.percent)) {
+          scope.el.text.text('?');
+          return;
         }
-        scope.el.text.text(displayValue);
+        scope.el.text.text(Math.round(scope.percent * 100) + '%');
         scope.el.foreground.transition()
           .duration(750)
           .call(arcTween, scope.percent * scope.tau);

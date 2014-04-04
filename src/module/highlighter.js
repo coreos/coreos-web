@@ -10,10 +10,9 @@
 angular.module('coreos.services')
 .factory('highlighterSvc', function($timeout, $, CORE_CONST) {
 
-  var highlighterSvc,
-      pendingTimeout;
+  var pendingTimeout;
 
-  highlighterSvc = {
+  return {
 
     /**
      * Highlight an element in the DOM.
@@ -36,7 +35,5 @@ angular.module('coreos.services')
     }
 
   };
-
-  return highlighterSvc;
 
 });

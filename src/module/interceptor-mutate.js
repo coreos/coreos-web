@@ -28,7 +28,7 @@ angular.module('coreos.services')
         if (method !== 'POST') {
           cacheKeys.push(removeLastPath(url));
         }
-        $rootScope.$broadcast(CORE_EVENT.RESP_MUTATE, cacheKeys);
+        $rootScope.$broadcast(CORE_EVENT.RESP_MUTATE, response);
       }
       return response || $q.when(response);
     }

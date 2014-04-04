@@ -1,0 +1,19 @@
+// Common styles for all d3 graphs
+
+svg {
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #ccc;
+    shape-rendering: crispEdges;
+  }
+  .axis .tick text {
+    stroke: none;
+    fill: #999;
+    font-weight: 100;
+    font-size: 80%;
+  }
+  .x-axis path {
+    display: none;
+  }
+}
