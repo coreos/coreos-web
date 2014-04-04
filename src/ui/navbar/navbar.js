@@ -16,6 +16,7 @@ angular.module('coreos.ui')
     replace: true,
     controller: function($scope) {
       $scope.config = configSvc.get();
+      $scope.isCollapsed = true;
     }
   };
 
