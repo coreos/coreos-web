@@ -1,7 +1,7 @@
 <div class="co-m-navbar co-fx-box-shadow navbar navbar-fixed-top">
 
   <div class="navbar-header">
-    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+    <button ng-click="isCollapsed = !isCollapsed" class="navbar-toggle" type="button">
       <span class="glyphicon glyphicon-align-justify"></span>
     </button>
     <a ng-href="{{config.siteBasePath}}" class="navbar-brand">
@@ -9,6 +9,6 @@
     </a>
   </div>
 
-  <div ng-transclude class="collapse navbar-collapse"></div>
+  <div collapse="isCollapsed" ng-transclude class="collapse navbar-collapse"></div>
 
 </div>
