@@ -164,7 +164,7 @@ module.exports = function(grunt) {
       },
       fontawesome: {
         options: {
-          includePaths: ['bower_components/font-awesome/scss'],
+          includePaths: ['bower_components/font-awesome/scss', 'src/sass'],
           outputStyle: 'nested'
         },
         files: {
@@ -173,7 +173,7 @@ module.exports = function(grunt) {
       },
       bootstrap: {
         options: {
-          includePaths: ['bower_components/bootstrap-sass/lib'],
+          includePaths: ['bower_components/bootstrap-sass/lib', 'src/sass'],
           outputStyle: 'nested'
         },
         files: {
@@ -317,6 +317,7 @@ module.exports = function(grunt) {
     'jshint',
     'templates',
     'copy:fonts',
+    'copy:images',
     'sass',
     'concurrent:dev'
   ]);

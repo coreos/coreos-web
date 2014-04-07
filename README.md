@@ -12,4 +12,7 @@ bower install
 
 ## Build
 
-`grunt`
+Edit the `$coreosWebDistPath` variable in `/src/sass/_path-config.scsss` to point the correct path for your application (necessary for font and image paths to be configured properly).
+
+run `grunt`  
+copy all files out of `/dist`

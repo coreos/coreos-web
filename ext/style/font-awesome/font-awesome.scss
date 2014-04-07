@@ -1,5 +1,6 @@
-// Override fontawesome font paths.
-$fa-font-path: "/cp/static/coreos-web/fonts/" !default;
+// coreos-web static path config.
+@import "path-config";
+
 
 @import "variables";
 @import "mixins";
