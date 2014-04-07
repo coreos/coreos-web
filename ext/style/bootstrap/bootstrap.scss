@@ -1,4 +1,6 @@
-$icon-font-path: "/cp/static/coreos-web/fonts/" !default;
+// coreos-web static path config.
+@import "path-config";
+
 
 // Core variables and mixins
 @import "variables";

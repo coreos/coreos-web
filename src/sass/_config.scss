@@ -2,8 +2,8 @@
  * Site-wide variables go here.
  */
 
-$font-path: '/cp/static/coreos-web/fonts' !default;
-$img-path: '/cp/static/coreos-web/img' !default;
+// Configure static paths.
+@import "path-config";
 
 /* LAYOUT DIMENSIONS */
 $height-footer: 40px;
