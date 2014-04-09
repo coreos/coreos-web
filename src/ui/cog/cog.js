@@ -19,7 +19,9 @@ angular.module('coreos.ui')
       'anchor': '@'
     },
     controller: function($scope) {
-      $scope.clickHandler = function(option) {
+      $scope.clickHandler = function($event, option) {
+        $event.preventDefault();
+        $event.stopPropagation();
         if (option.callback) {
           option.callback();
         }

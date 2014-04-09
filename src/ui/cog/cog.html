@@ -3,7 +3,7 @@
   <ul class="dropdown-menu co-m-cog__dropdown co-m-dropdown--dark co-m-cog__dropdown--anchor-{{anchor}}">
     <li ng-repeat="option in options | orderBy:'weight'">
       <a ng-if="option.href" ng-href="{{option.href}}">{{option.label}}</a>
-      <a ng-if="!option.href" ng-click="clickHandler(option)">{{option.label}}</a>
+      <a ng-if="!option.href" ng-click="clickHandler($event, option)">{{option.label}}</a>
     </li>
   </ul>
 </div>
