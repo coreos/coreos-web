@@ -31,6 +31,13 @@ h2 {
   font-size: 110%;
 }
 
+kbd {
+  @include border-radius(3px);
+  background-color: $gray-lighter;
+  border: solid 1px $gray-light;
+  padding: 4px 8px;
+}
+
 .modal {
   .form-row {
     margin-bottom: 20px;
