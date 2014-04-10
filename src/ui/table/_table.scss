@@ -1,4 +1,18 @@
- .co-m-table {
+.co-m-table-container {
+  display: block;
+  width: 100%;
+}
+
+// Set another max-width if desired.
+.co-m-table__constrain-content {
+  max-width: 300px;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.co-m-table {
 
   .co-m-table-selected-row {
     background-position: right 10px center;
