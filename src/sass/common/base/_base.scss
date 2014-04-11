@@ -38,6 +38,15 @@ kbd {
   padding: 4px 8px;
 }
 
+input[type="number"] {
+  max-width: 100px;
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
 .modal {
   .form-row {
     margin-bottom: 20px;
