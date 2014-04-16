@@ -1,0 +1,34 @@
+.co-m-facet-menu {
+  margin-bottom: 30px;
+}
+
+.co-m-facet-menu__title,
+.co-m-facet-menu-option {
+  font-size: 80%;
+}
+
+.co-m-facet-menu__title {
+  text-transform: uppercase;
+  color: $gray;
+  padding: 4px;
+  font-weight: 300;
+}
+
+.co-m-facet-menu__option-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.co-m-facet-menu-option {
+  padding: 8px 15px 8px 8px;
+  cursor: pointer;
+  border-top: 1px solid $gray-lighter;
+  &.co-m-facet-option--active,
+  &:hover {
+    background-color: $color-table-active;
+  }
+  &.co-m-facet-option--active {
+    background: url($img-path + '/icon-right-arrow.svg') right 10px center no-repeat $color-table-active;
+  }
+}
