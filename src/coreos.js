@@ -24,7 +24,7 @@ angular.module('coreos.ui', [
   'd3',
   'ui.bootstrap'
 ]);
-angular.module('coreos.filters', []);
+angular.module('coreos.filters', ['underscore']);
 angular.module('coreos.events', []);
 angular.module('coreos', [
   'coreos.events',
