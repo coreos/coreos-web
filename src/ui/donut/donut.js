@@ -41,7 +41,7 @@ angular.module('coreos.ui')
             textColor = '#333',
             bgcolor = '#eee',
             color = scope.color || '#000',
-            fontSize = 18;
+            fontSize = 16;
 
         // Keep track of added DOM elements.
         scope.el = {};
@@ -87,11 +87,18 @@ angular.module('coreos.ui')
        * Update the value of the donut chart.
        */
       function updateValue() {
+        var displayValue;
         if (!_.isNumber(scope.percent)) {
           scope.el.text.text('?');
           return;
         }
-        scope.el.text.text(Math.round(scope.percent * 100) + '%');
+        displayValue = scope.percent * 100;
+        // Don't show decimals for 100%.
+        if (displayValue !== 100) {
+          displayValue = displayValue.toFixed(1);
+        }
+        displayValue += '%';
+        scope.el.text.text(displayValue);
         scope.el.foreground.transition()
           .duration(750)
           .call(arcTween, scope.percent * scope.tau);
