@@ -12,7 +12,13 @@ bower install
 
 ## Build
 
-Edit the `$coreosWebDistPath` variable in `/src/sass/_path-config.scsss` to point the correct path for your application (necessary for font and image paths to be configured properly).
+Simple build:
+- run `grunt`  
+- copy all files out of `/dist`
 
-run `grunt`  
-copy all files out of `/dist`
+Build & bump other project:  
+This will update the path config, copy it, build everything, then copy the resulting assets to your project directory.  
+
+- edit the `coreosConfigs` paths in `bump.go` (not necessary if parent folder for other project is same as this one)
+- run `go run bump.go <project-name>` where project name is the map key in `coreosConfigs`
+- example: `go run bump.go etcd`
