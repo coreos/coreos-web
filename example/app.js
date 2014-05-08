@@ -35,9 +35,9 @@ app.config(function($routeProvider, $locationProvider, $httpProvider,
       redirectTo: '/example'
     })
     .when('/example', {
-      controller: 'MainPageCtrl',
-      templateUrl: '/example/main-page.html',
-      title: 'CoreOS Web Examples'
+      controller: 'JsModulesCtrl',
+      templateUrl: '/example/js-modules.html',
+      title: 'JS Modules'
     })
     .when('/example/page1', {
       controller: 'Page1Ctrl',

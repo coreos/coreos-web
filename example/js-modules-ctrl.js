@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('app')
-.controller('JsModulesCtrl', function($scope, $q, $timeout, toastSvc) {
+.controller('JsModulesCtrl', function($scope, $q, $timeout, $interval,
+      toastSvc) {
 
   // toast
   $scope.toastSvc = toastSvc;
@@ -35,5 +36,25 @@ angular.module('app')
     $scope.errorMessagePromise = d.promise;
     $timeout(d.reject, 2000);
   };
+
+  $scope.pieData = [
+    {
+      label: 'Amazon',
+      value: 100
+    },
+    {
+      label: 'Google',
+      value: 200
+    },
+    {
+      label: 'Rackspace',
+      value: 20
+    }
+  ];
+
+  $interval(function() {
+    $scope.pieData[0].value = Math.ceil(Math.random()*100);
+    $scope.pieData[1].value = 100 - $scope.pieData[0].value;
+  }, 4000);
 
 });

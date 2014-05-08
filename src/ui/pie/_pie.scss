@@ -1,0 +1,17 @@
+.co-m-pie {
+  > svg {
+    border: 1px solid #999;
+  }
+}
+
+.co-m-pie__labels > text {
+  font-size: 13px;
+}
+
+.co-m-pie__lines > polyline {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  opacity: 0.5;
+  stroke: #333;
+}
