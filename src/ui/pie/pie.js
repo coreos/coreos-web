@@ -6,7 +6,7 @@
 'use strict';
 
 angular.module('coreos.ui')
-.directive('coPie', function(d3) {
+.directive('coPie', function(d3, _) {
 
   // Default settings.
   var settings = {
@@ -75,7 +75,7 @@ angular.module('coreos.ui')
       };
 
       valueFn = function(d) {
-        return d[scope.valueField];
+        return d.data[scope.valueField];
       };
 
       labelFn = function(d) {
@@ -84,7 +84,9 @@ angular.module('coreos.ui')
 
       pie = d3.layout.pie()
         .sort(null)
-        .value(valueFn);
+        .value(function(d) {
+          return d[scope.valueField];
+        });
 
       // Render initial DOM.
       el.svg = d3.select(elem[0])
@@ -152,7 +154,9 @@ angular.module('coreos.ui')
             return function(t) {
               var d2 = interpolate(t);
               var pos = outerArc.centroid(d2);
-              pos[0] = settings.radius * (midAngle(d2) < Math.PI ? 1 : -1);
+              pos[0] = settings.radius * 1.1 * (midAngle(d2) < Math.PI ?
+                1 :
+                -1);
               return 'translate('+ pos +')';
             };
           })
@@ -207,8 +211,10 @@ angular.module('coreos.ui')
         el.svg.remove();
       });
 
-      scope.$watch('values', function() {
-        update();
+      scope.$watch('values', function(values) {
+        if (!_.isEmpty(values)) {
+          update();
+        }
       }, true);
 
     }

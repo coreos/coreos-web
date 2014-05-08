@@ -40,21 +40,21 @@ angular.module('app')
   $scope.pieData = [
     {
       label: 'Amazon',
-      value: 100
+      count: 100
     },
     {
       label: 'Google',
-      value: 200
+      count: 200
     },
     {
       label: 'Rackspace',
-      value: 20
+      count: 20
     }
   ];
 
   $interval(function() {
-    $scope.pieData[0].value = Math.ceil(Math.random()*100);
-    $scope.pieData[1].value = 100 - $scope.pieData[0].value;
+    $scope.pieData[0].count = Math.ceil(Math.random()*100);
+    $scope.pieData[1].count = 100 - $scope.pieData[0].count;
   }, 4000);
 
 });
