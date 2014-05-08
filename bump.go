@@ -5,18 +5,20 @@
 // Usage:
 // go run bump.go roller
 // go run bump.go etcd
-// Assumes the etcd and roller projects are in the same parent directory as this project.
+// Assumes the etcd and roller projects are installed under the GOPATH/src.
 package main
 
 import (
 	"fmt"
 	"os"
 	"os/exec"
+	"path"
 	"text/template"
 )
 
 var scssTemplate *template.Template
 var projectRootDir string
+var GOPATH = os.Getenv("GOPATH")
 
 // Output location of the template once it's compiled.
 const SCSS_OUTPUT_FILE = "./src/sass/_path-config.scss"
@@ -36,11 +38,11 @@ var coreosConfigs = map[string]TargetConfig{
 	},
 	"roller": TargetConfig{
 		DistPath: "/cp/static/coreos-web/",
-		LibDir:   "../roller/cp/app/coreos-web",
+		LibDir:   path.Join(GOPATH, "src/github.com/coreos-inc/roller/cp/app/coreos-web"),
 	},
 	"etcd": TargetConfig{
 		DistPath: "/mod/dashboard/static/coreos-web/",
-		LibDir:   "../etcd/mod/dashboard/app/coreos-web",
+		LibDir:   path.Join(GOPATH, "src/github.com/coreos/etcd/mod/dashboard/app/coreos-web"),
 	},
 }
 
