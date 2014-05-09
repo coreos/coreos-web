@@ -3,13 +3,12 @@
 }
 
 .co-m-pie__labels > text {
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .co-m-pie__lines > polyline {
   fill: none;
-  stroke-width: 2;
+  stroke-width: 1;
   stroke-linecap: round;
-  opacity: 0.5;
-  stroke: #333;
+  stroke: $gray-darker;
 }
