@@ -100,4 +100,7 @@ angular.module('app')
     //}, 2000);
   //}, 4000);
 
+
+  $scope.toggleParam = 'A';
+
 });
