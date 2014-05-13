@@ -9,39 +9,9 @@
 .co-m-loader__spinner {
   @include co-x-animation(co-spin, $duration: 0.75s, $timingFunction: linear, $iterationCount: infinite);
 
+  display: inline-block;
   width: 28px;
   height: 28px;
-  border: 2px solid $blue;
-  border-radius: 50%;
-
-  &::before,
-  &::after {
-    left: -2px;
-    top: -2px;
-    position: absolute;
-    content: '';
-    width: inherit;
-    height: inherit;
-    border: inherit;
-    border-radius: inherit;
-  }
-
-  &::before {
-    @include transform(rotate(120deg));
-  }
-
-  &::after {
-    @include transform(rotate(240deg));
-  }
-
-}
-
-.co-m-loader__spinner,
-.co-m-loader__spinner::before,
-.co-m-loader__spinner::after {
-  display: inline-block;
-  border-color: transparent;
-  border-top-color: $blue;
 }
 
 @include co-x-keyframes(co-spin) {
