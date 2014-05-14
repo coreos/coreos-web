@@ -14,4 +14,12 @@ angular.module('coreos.ui')
     restrict: 'E',
     replace: true
   };
+})
+
+.directive('coInlineLoader', function() {
+  return {
+    templateUrl: '/coreos.ui/loader/inline-loader.html',
+    restrict: 'E',
+    replace: true
+  };
 });
