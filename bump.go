@@ -37,8 +37,8 @@ var coreosConfigs = map[string]TargetConfig{
 		LibDir:   "",
 	},
 	"roller": TargetConfig{
-		DistPath: "/cp/static/coreos-web/",
-		LibDir:   path.Join(GOPATH, "src/github.com/coreos-inc/roller/cp/app/coreos-web"),
+		DistPath: "/cp/static/lib/coreos-web/",
+		LibDir:   path.Join(GOPATH, "src/github.com/coreos-inc/roller/cp/app/lib/coreos-web"),
 	},
 	"etcd": TargetConfig{
 		DistPath: "/mod/dashboard/static/coreos-web/",

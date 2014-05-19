@@ -192,9 +192,6 @@ module.exports = function(grunt) {
 
     uglify: {
       dist: {
-        options: {
-          sourceMap: true,
-        },
         files: {
           'dist/coreos.min.js': ['dist/coreos.min.js']
         }
