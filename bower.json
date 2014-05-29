@@ -12,7 +12,8 @@
     "underscore.string": "latest",
     "jquery": "latest",
     "d3": "latest",
-    "font-awesome": "~4.0.3"
+    "font-awesome": "~4.0.3",
+    "moment": "latest"
   },
   "devDependencies": {
     "angular-mocks": "latest"

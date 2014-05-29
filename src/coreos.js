@@ -12,6 +12,10 @@ angular.module('d3', []).factory('d3', function($window) {
   return $window.d3;
 });
 
+angular.module('moment', []).factory('moment', function($window) {
+  return $window.moment;
+});
+
 angular.module('coreos.services', [
   'coreos.events',
   'underscore',
@@ -22,7 +26,8 @@ angular.module('coreos.ui', [
   'underscore',
   'jquery',
   'd3',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'moment'
 ]);
 angular.module('coreos.filters', ['underscore']);
 angular.module('coreos.events', []);
