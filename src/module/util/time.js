@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('coreos.services')
-.factory('timeSvc', function(_) {
+.factory('timeSvc', function(_, moment) {
 
   var ONE_MINUTE_IN_MS = 60 * 1000,
       ONE_HOUR_IN_MS = ONE_MINUTE_IN_MS * 60,
@@ -35,6 +35,10 @@ angular.module('coreos.services')
       return Math.abs(parseInt(mins, 10) * 60) || 0;
     },
 
+    minsToMillis: function(mins) {
+      return this.minsToSecs(mins) * 1000;
+    },
+
     oneHourAgo: function(ts) {
       return getTimestamp(ts) - this.ONE_HOUR_IN_MS;
     },
@@ -63,6 +67,18 @@ angular.module('coreos.services')
         case 'hour':
           return this.oneHourAgo(now);
       }
+    },
+
+    utcToLocal: function(date) {
+      // Parse a variety of input types via moment.
+      var d = moment(date);
+      return new Date(d.valueOf() - this.minsToMillis(d.zone()));
+    },
+
+    localToUtc: function(date) {
+      // Parse a variety of input types via moment.
+      var d = moment(date);
+      return new Date(d.valueOf() + this.minsToMillis(d.zone()));
     }
 
   };
