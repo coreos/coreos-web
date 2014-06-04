@@ -1,0 +1,55 @@
+.co-m-date-range {
+  margin: 10px 0;
+}
+
+.co-m-date-range-custom {
+  .glyphicon {
+    color: $color-icon-dark;
+  }
+  a .glyphicon {
+    color: $blue-link;
+  }
+}
+
+.co-m-date-range-custom__date-picker {
+  tbody .btn {
+    border-radius: 0;
+    padding: 2px;
+    width: 20px;
+  }
+}
+
+.co-m-date-range-custom__utc-toggle {
+  margin: 20px 0 10px 0;
+}
+
+.co-m-date-range__utc-toggle {
+  display: inline-block;
+  cursor: pointer;
+  line-height: 30px;
+}
+
+.co-m-date-range-custom__selectors {
+  .dropdown-menu {
+    margin: 0;
+    padding: 5px;
+    border: none;
+    .btn {
+      @include border-radius(0);
+      @include box-shadow(none);
+      padding: 0;
+    }
+    table {
+      min-width: 185px;
+    }
+    th .btn-default.pull-left ,
+    th .btn-default.pull-right {
+      margin: 0;
+      padding: 0 4px;
+    }
+    th {
+      font-weight: 400;
+      padding: 4px 0;
+    }
+  }
+}
