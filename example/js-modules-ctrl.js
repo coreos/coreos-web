@@ -103,4 +103,10 @@ angular.module('app')
 
   $scope.toggleParam = 'A';
 
+  $scope.dateValues = {
+    start: null,
+    end: null,
+    period: null
+  };
+
 });
