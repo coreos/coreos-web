@@ -1,0 +1,94 @@
+<div class="co-m-date-range-custom">
+  <form ng-controller="DateRangeCustomFormCtrl" ng-submit="submitForm()" name="form" role="form">
+
+    <div class="modal-header">
+      <div class="row">
+        <div class="col-lg-6">
+          <h4 class="modal-title">Custom Timeframe</h4>
+        </div>
+        <div class="col-lg-6">
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-lg-2">
+          <label class="control-label">Timezone</label>
+        </div>
+        <div class="col-lg-10">
+          <a href="#" ng-click="toggleUtc()" class="co-m-date-range__utc-toggle">
+            <i class="glyphicon glyphicon-globe co-m-icon-inline"></i>
+            <span ng-bind="toggleUtcText"></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-2">
+          <label class="control-label">From</label>
+        </div>
+        <div class="col-lg-4">
+          <p class="input-group co-m-date-range-custom__selectors">
+            <input type="text" class="form-control"
+                datepicker-popup="{{dateFmt}}"
+                ng-model="inputs.startDate"
+                is-open="dpSettings.startDateIsOpen"
+                min-date="minDate"
+                date-disabled="dpSettings.disabled(date, mode)"
+                show-button-bar="false"
+                show-weeks="false"
+                year-range="2"
+                ng-required="true"/>
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default" ng-click="openDatePicker('start', $event)">
+                <i class="glyphicon glyphicon-calendar"></i>
+              </button>
+            </span>
+          </p>
+        </div>
+        <div class="col-lg-3">
+          <input type="text" name="startTime" ng-model="inputs.startTime" class="form-control"/>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-2">
+          <label class="control-label">To</label>
+        </div>
+        <div class="col-lg-4">
+          <p class="input-group co-m-date-range-custom__selectors">
+            <input type="text" class="form-control"
+                datepicker-popup="{{dateFmt}}"
+                ng-model="inputs.endDate"
+                is-open="dpSettings.endDateIsOpen"
+                min-date="minDate"
+                date-disabled="dpSettings.disabled(date, mode)"
+                show-button-bar="false"
+                show-weeks="false"
+                year-range="2"
+                ng-required="false"/>
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default" ng-click="openDatePicker('end', $event)">
+                <i class="glyphicon glyphicon-calendar"></i>
+              </button>
+            </span>
+          </p>
+        </div>
+        <div class="col-lg-3">
+          <input type="text" name="endTime" ng-model="inputs.endTime" class="form-control"/>
+        </div>
+        <div class="col-lg-3">
+          <button type="button" ng-click="resetEnd()" class="btn btn-link">Reset to Now</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-primary">Apply Timeframe</button>
+      <button type="button" ng-click="cancel()" class="btn btn-link">Cancel</button>
+    </div>
+
+  </form>
+</div>
