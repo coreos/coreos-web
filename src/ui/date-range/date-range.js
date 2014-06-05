@@ -24,19 +24,13 @@ angular.module('coreos.ui')
       start: '=',
       end: '=',
       period: '=',
-      utc: '@'
+      utc: '='
     },
     link: function(scope) {
       var dateFmt = 'MMM DD h:mma';
 
       function get(value) {
         return _.findWhere(scope.items, { value: value });
-      }
-
-      if (scope.utc === 'false') {
-        scope.utc = false;
-      } else {
-        scope.utc = true;
       }
 
       scope.items = [
@@ -70,49 +64,64 @@ angular.module('coreos.ui')
         scope.period = period;
       };
 
+      scope.formatButton = function() {
+        var startDisplayDate, endDisplayDate, suffix;
+
+        if (scope.period !== 'custom') {
+          scope.btnText = get(scope.period).label;
+          return;
+        }
+
+        if (scope.utc) {
+          suffix = ' UTC';
+          // convert to local date just for display.
+          startDisplayDate = moment(timeSvc.utcToLocal(scope.start));
+          endDisplayDate = moment(timeSvc.utcToLocal(scope.end));
+        } else {
+          suffix = '';
+          startDisplayDate = moment(scope.start);
+          endDisplayDate = moment(scope.end);
+        }
+        scope.btnText = startDisplayDate.format(dateFmt);
+        if (scope.utc && !scope.end) {
+          scope.btnText += suffix;
+        }
+        scope.btnText += ' - ';
+        if (scope.end) {
+          scope.btnText += endDisplayDate.format(dateFmt) + suffix;
+        } else {
+          scope.btnText += 'Latest';
+        }
+      };
+
       scope.openModal = function() {
         modalConfig.resolve = {
           start: d3.functor(scope.start),
           end: d3.functor(scope.end),
           utc: d3.functor(scope.utc)
         };
+        // Handle custom range changes.
         $modal.open(modalConfig)
           .result.then(function(customRange) {
-            var startDisplayDate, endDisplayDate, suffix;
             scope.utc = customRange.utc;
             scope.start = customRange.start;
             scope.end = customRange.end;
             scope.period = 'custom';
-            if (scope.utc) {
-              suffix = ' UTC';
-              // convert to local date just for display.
-              startDisplayDate = moment(timeSvc.utcToLocal(scope.start));
-              endDisplayDate = moment(timeSvc.utcToLocal(scope.end));
-            } else {
-              suffix = '';
-              startDisplayDate = moment(scope.start);
-              endDisplayDate = moment(scope.end);
-            }
-            scope.btnText = startDisplayDate.format(dateFmt);
-            if (scope.utc && !scope.end) {
-              scope.btnText += suffix;
-            }
-            scope.btnText += ' - ';
-            if (scope.end) {
-              scope.btnText += endDisplayDate.format(dateFmt) + suffix;
-            } else {
-              scope.btnText += 'Latest';
-            }
+            scope.formatButton();
           });
       };
 
+      // Handle period changes.
       scope.$watch('period', function(period) {
-        if (!period || period === 'custom') {
+        if (!period) {
           return;
         }
-        scope.start = timeSvc.getRelativeTimestamp(get(period).value);
-        scope.end = null;
-        scope.btnText = get(period).label;
+        if (period !== 'custom') {
+          // Reset start/end for all non-custom periods.
+          scope.start = null;
+          scope.end = null;
+        }
+        scope.formatButton();
       });
 
     }
