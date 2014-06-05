@@ -32,6 +32,7 @@ angular.module('coreos.services')
     },
 
     minsToSecs: function(mins) {
+      // TODO(sym3tri): why does this us abs? remove if safe.
       return Math.abs(parseInt(mins, 10) * 60) || 0;
     },
 
@@ -69,16 +70,37 @@ angular.module('coreos.services')
       }
     },
 
+    // Get theoffset of the current users's timezone in milliseconds.
+    getMsOffset: function() {
+      return moment().zone() * 60 * 1000;
+    },
+
     utcToLocal: function(date) {
       // Parse a variety of input types via moment.
-      var d = moment(date);
-      return new Date(d.valueOf() - this.minsToMillis(d.zone()));
+      var d = moment(date),
+          offset = this.getMsOffset(),
+          ts = d.valueOf();
+
+      if (offset > 0) {
+        ts = ts + offset;
+      } else {
+        ts = ts - Math.abs(offset);
+      }
+      return new Date(ts);
     },
 
     localToUtc: function(date) {
       // Parse a variety of input types via moment.
-      var d = moment(date);
-      return new Date(d.valueOf() + this.minsToMillis(d.zone()));
+      var d = moment(date),
+          offset = this.getMsOffset(),
+          ts = d.valueOf();
+
+      if (offset > 0) {
+        ts = ts - offset;
+      } else {
+        ts = ts + Math.abs(offset);
+      }
+      return new Date(ts);
     }
 
   };
