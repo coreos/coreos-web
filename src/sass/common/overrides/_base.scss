@@ -52,3 +52,7 @@ dl {
 .glyphicon {
   color: $color-icon-light;
 }
+
+[ng-cloak] {
+  display: none;
+}
