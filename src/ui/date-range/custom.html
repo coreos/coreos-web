@@ -13,10 +13,10 @@
 
     <div class="modal-body">
       <div class="row">
-        <div class="col-lg-2">
+        <div class="col-lg-2 col-md-2 col-sm-2">
           <label class="control-label">Timezone</label>
         </div>
-        <div class="col-lg-10">
+        <div class="col-lg-10 col-md-10 col-sm-10">
           <a href="#" ng-click="toggleUtc()" class="co-m-date-range__utc-toggle">
             <i class="glyphicon glyphicon-globe co-m-icon-inline"></i>
             <span ng-bind="toggleUtcText"></span>
@@ -25,10 +25,10 @@
       </div>
 
       <div class="row">
-        <div class="col-lg-2">
+        <div class="col-lg-2 col-md-2 col-sm-2">
           <label class="control-label">From</label>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4 col-md-4 col-sm-4">
           <p class="input-group co-m-date-range-custom__selectors">
             <input type="text" class="form-control"
                 datepicker-popup="{{dateFmt}}"
@@ -47,16 +47,16 @@
             </span>
           </p>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-3 col-sm-3">
           <input type="text" name="startTime" ng-model="inputs.startTime" class="form-control"/>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-lg-2">
+        <div class="col-lg-2 col-md-2 col-sm-2">
           <label class="control-label">To</label>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4 col-md-4 col-sm-4">
           <p class="input-group co-m-date-range-custom__selectors">
             <input type="text" class="form-control"
                 datepicker-popup="{{dateFmt}}"
@@ -75,10 +75,10 @@
             </span>
           </p>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-3 col-sm-3">
           <input type="text" name="endTime" ng-model="inputs.endTime" class="form-control"/>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-3 col-sm-3">
           <button type="button" ng-click="resetEnd()" class="btn btn-link">Reset to Now</button>
         </div>
       </div>
