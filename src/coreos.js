@@ -41,7 +41,6 @@ angular.module('coreos', [
 
   // External deps.
   'ngRoute',
-  'ngResource',
   'ngAnimate',
   'ui.bootstrap',
   'underscore',
