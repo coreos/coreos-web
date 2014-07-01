@@ -31,6 +31,7 @@ type TargetConfig struct {
 	LibDir   string
 }
 
+// TODO: move to config file
 var coreosConfigs = map[string]TargetConfig{
 	"example": TargetConfig{
 		DistPath: "/../dist/",
@@ -43,6 +44,10 @@ var coreosConfigs = map[string]TargetConfig{
 	"etcd": TargetConfig{
 		DistPath: "/mod/dashboard/static/coreos-web/",
 		LibDir:   path.Join(GOPATH, "src/github.com/coreos/etcd/mod/dashboard/app/coreos-web"),
+	},
+	"accounts": TargetConfig{
+		DistPath: "/static/lib/coreos-web/",
+		LibDir:   path.Join(GOPATH, "src/github.com/coreos-inc/accounts/frontend/public/lib/coreos-web"),
 	},
 }
 
