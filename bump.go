@@ -1,6 +1,4 @@
-// This is a utility to do 2 things.
-// 1. Update the static path location for css builds per project.
-// 2. Copy the compiled assets to their corresponding destination.
+// This is a utility to build & copy assets to other projects.
 
 // Usage:
 // go run bump.go roller
@@ -13,41 +11,31 @@ import (
 	"os"
 	"os/exec"
 	"path"
-	"text/template"
 )
 
-var scssTemplate *template.Template
 var projectRootDir string
 var GOPATH = os.Getenv("GOPATH")
-
-// Output location of the template once it's compiled.
-const SCSS_OUTPUT_FILE = "./src/sass/_path-config.scss"
 
 // Path where grunt build assets are placed.
 const DIST_PATH = "./dist/"
 
 type TargetConfig struct {
-	DistPath string
-	LibDir   string
+	LibDir string
 }
 
 // TODO: move to config file
 var coreosConfigs = map[string]TargetConfig{
 	"example": TargetConfig{
-		DistPath: "/../dist/",
-		LibDir:   "",
+		LibDir: "",
 	},
 	"roller": TargetConfig{
-		DistPath: "/cp/static/lib/coreos-web/",
-		LibDir:   path.Join(GOPATH, "src/github.com/coreos-inc/roller/cp/app/lib/coreos-web"),
+		LibDir: path.Join(GOPATH, "src/github.com/coreos-inc/roller/cp/app/lib/coreos-web"),
 	},
 	"etcd": TargetConfig{
-		DistPath: "/mod/dashboard/static/coreos-web/",
-		LibDir:   path.Join(GOPATH, "src/github.com/coreos/etcd/mod/dashboard/app/coreos-web"),
+		LibDir: path.Join(GOPATH, "src/github.com/coreos/etcd/mod/dashboard/app/coreos-web"),
 	},
-	"accounts": TargetConfig{
-		DistPath: "/static/lib/coreos-web/",
-		LibDir:   path.Join(GOPATH, "src/github.com/coreos-inc/accounts/frontend/public/lib/coreos-web"),
+	"account": TargetConfig{
+		LibDir: path.Join(GOPATH, "src/github.com/coreos-inc/account/frontend/public/lib/coreos-web"),
 	},
 }
 
@@ -57,22 +45,6 @@ func grunt() {
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	cmd.Run()
-}
-
-// Execute the scss paths template with the appropriate args.
-func execTemplate(c TargetConfig) {
-	// Create the output file.
-	f, err := os.Create(SCSS_OUTPUT_FILE)
-	if err != nil {
-		fmt.Println("error creating destination file.")
-	}
-	defer f.Close()
-
-	// Write processed template to output file.
-	scssTemplate.Execute(f, c)
-	if err != nil {
-		fmt.Println("error executing template")
-	}
 }
 
 // Copy build assets to destination dir.
@@ -88,9 +60,6 @@ func copyDist(c TargetConfig) {
 
 // Run the build and copy etc.
 func build(c TargetConfig) {
-	fmt.Printf("Executing template...")
-	execTemplate(c)
-	fmt.Printf("done\n")
 	fmt.Println("Running grunt...")
 	grunt()
 	fmt.Println("grunt complete")
@@ -101,18 +70,10 @@ func build(c TargetConfig) {
 }
 
 func main() {
-	// Read path-config template.
-	var err error
-	scssTemplate, err = template.ParseFiles("path-config.tpl.scss")
-	if err != nil {
-		fmt.Println("template file not found")
-	}
-
 	// Optionally accepts env vars to specify paths so editing struct is not necessary.
 	if os.Getenv("COREOSWEB_DIST_PATH") != "" && os.Getenv("COREOSWEB_DIST_LIB_DIR") != "" {
 		config := TargetConfig{
-			DistPath: os.Getenv("COREOSWEB_DIST_PATH"),
-			LibDir:   os.Getenv("COREOSWEB_LIB_DIR"),
+			LibDir: os.Getenv("COREOSWEB_LIB_DIR"),
 		}
 		fmt.Println("Building custom target.")
 		build(config)

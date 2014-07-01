@@ -1,4 +1,3 @@
 dist/
 node_modules/
 bower_components/
-src/sass/_path-config.scss
