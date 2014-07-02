@@ -1,0 +1,30 @@
+#!/bin/bash -e
+
+bucket=cdn.core-os.net/coreos-web
+
+function upload {
+  file=$1
+  contentType=$2
+
+  resource="/${bucket}/$(basename $file)"
+  dateValue=`date -ju +"%a, %d %b %Y %H:%M:%S GMT"`
+  stringToSign="PUT\n\n${contentType}\n${dateValue}\n${resource}"
+
+  signature=`echo -en ${stringToSign} | openssl sha1 -hmac ${S3_CDN_SECRET} -binary | base64`
+
+  curl --upload-file ${file} \
+      -H "Date: ${dateValue}" \
+      -H "Content-type: ${contentType}" \
+      -H "Authorization: AWS ${S3_CDN_KEY}:${signature}" \
+      http://s3.amazonaws.com${resource}
+
+  echo uploaded to $resource
+}
+
+for filename in dist/*.js; do
+  upload $filename "application/javascript"
+done
+
+for filename in dist/*.css; do
+  upload $filename "text/css"
+done
