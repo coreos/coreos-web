@@ -1,5 +1,5 @@
 // Root path where you plan to host coreos-web.
-$coreosWebDistPath: '{{.DistPath}}';
+$coreosWebDistPath: './';
 $coreosWebFontPath: $coreosWebDistPath + 'fonts';
 
 

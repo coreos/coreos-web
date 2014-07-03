@@ -3,6 +3,7 @@
 module.exports = function(grunt) {
   /*jshint maxstatements:false */
 
+  var fs = require('fs');
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.initConfig({
@@ -296,6 +297,20 @@ module.exports = function(grunt) {
 
   });
 
+  // Create a version.json file based on the bower config version.
+  grunt.registerTask('version', 'Generate version.json', function() {
+    var bowerCfg = require('./bower.json'),
+        done = this.async(),
+        versionFile = __dirname + '/dist/version.json',
+        versionInfo;
+
+    versionInfo = {
+      version: bowerCfg.version
+    };
+    fs.writeFileSync(versionFile, JSON.stringify(versionInfo, null, 2) + '\n');
+    done();
+  });
+
   grunt.registerTask('test', [
     'templates',
     'karma:unit'
@@ -329,6 +344,7 @@ module.exports = function(grunt) {
     'cssmin',
     'ngmin',
     'uglify',
+    'version',
     'copy:fonts',
     'copy:images',
     'copy:svg',
