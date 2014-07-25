@@ -9,7 +9,8 @@ var app = angular.module('app', [
 
 // Routes
 app.config(function($routeProvider, $locationProvider, $httpProvider,
-    pollerSvcProvider, configSvcProvider, errorMessageSvcProvider) {
+    pollerSvcProvider, configSvcProvider, errorMessageSvcProvider,
+    apiClientProvider) {
 
   // General configure for coreos-web library.
   configSvcProvider.config({
@@ -19,6 +20,15 @@ app.config(function($routeProvider, $locationProvider, $httpProvider,
 
   errorMessageSvcProvider.registerFormatter('foo', function(resp) {
     return resp.error;
+  });
+
+  apiClientProvider.settings({
+    cache: false,
+    apis: [{
+      name: 'mock',
+      id: 'mock:v1',
+      discoveryEndpoint: window.location.origin + '/example/discovery.json'
+    }]
   });
 
   // Configure poller service.

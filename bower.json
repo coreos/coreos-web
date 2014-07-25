@@ -1,6 +1,6 @@
 {
   "name": "coreos-web",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "dependencies": {
     "angular": "latest",
     "angular-route": "latest",
