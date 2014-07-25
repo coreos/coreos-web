@@ -6,5 +6,6 @@ angular.module('coreos.events').constant('CORE_EVENT', {
   RESP_ERROR: 'core.event.resp_error',
   RESP_MUTATE: 'core.event.resp_mutate',
   DOC_VISIBILITY_CHANGE: 'core.event.doc_visibility_change',
-  POLL_ERROR: 'core.event.poll_error'
+  POLL_ERROR: 'core.event.poll_error',
+  LOCAL_STORAGE_CHANGE: 'core.event.local_storage_change'
 });
