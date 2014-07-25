@@ -2,7 +2,7 @@
 
 angular.module('app')
 .controller('JsModulesCtrl', function($scope, $q, $timeout, $interval,
-      toastSvc) {
+      toastSvc, apiClient) {
 
   // toast
   $scope.toastSvc = toastSvc;
@@ -109,5 +109,22 @@ angular.module('app')
     period: 'custom',
     utc: false
   };
+
+
+  apiClient.get('mock')
+    .then(function(client) {
+      $scope.client = client;
+
+      $scope.client.users.list()
+        .success(function(data) {
+          $scope.users = data.items || [];
+        })
+        .catch(function(e) {
+          console.log('error: ', e);
+        });
+    })
+    .catch(function() {
+      console.log('could not initialize client');
+    });
 
 });
