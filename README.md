@@ -17,11 +17,12 @@ Simple build:
 - copy all files out of `/dist`
 
 Build & bump other project:  
-This will update the path config, copy it, build everything, then copy the resulting assets to your project directory.  
+This will build everything, then copy the resulting assets to your project directory.  
 
-- edit the `coreosConfigs` paths in `bump.go` (not necessary if parent folder for other project is same as this one)
-- run `go run bump.go <project-name>` where project name is the map key in `coreosConfigs`
-- example: `go run bump.go etcd`
+- create/edit the `.bumpcfg` file to export your project names with their path to coreos-web.  
+  example: `export myproject=$GOPATH/src/github.com/myproject/web/coreos-web`
+- run `./bump.sh <project-name>` where project-name is the env var in `.bumpcfg`  
+  example: `./bump.sh myproject`
 
 
 ## Run Examples
