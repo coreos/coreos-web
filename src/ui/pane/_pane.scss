@@ -1,0 +1,78 @@
+// Use this instead of co-m-panel
+// See examples page for common usages.
+
+// Top-level pane element.
+.co-m-pane {
+  @extend .co-fx-box-shadow-heavy;
+  background-color: $color-bg-primary;
+  margin-bottom: 20px;
+  min-height: 200px;
+}
+
+// Common heading with full padding on all sides.
+.co-m-pane__heading,
+.co-m-pane__heading--bordered {
+  padding: 30px;
+}
+
+// Same as 'heading' but with a border separator.
+.co-m-pane__heading--bordered {
+  border-bottom: solid 1px $color-border;
+}
+
+// Heading when bottom padding is not desired.
+.co-m-pane__heading-short {
+  padding: 30px 30px 0 30px;
+}
+
+// Title element.
+.co-m-pane__title {
+  line-height: 24px;
+  margin: 0;
+}
+
+// Standard body element with no inner sections.
+.co-m-pane__body {
+  @include clearfix();
+  padding: 30px 30px 30px 30px;
+}
+
+// Wrapper for 'body-section' elements.
+.co-m-pane__body-group {
+  @include clearfix();
+  padding: 0 0 30px 0;
+
+  .co-m-pane__body-section,
+  .co-m-pane__body-section--bordered {
+    padding: 15px 30px;
+    &:first-child {
+      padding-top: 0;
+    }
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  // Same as 'body-section' but with a border separator.
+  .co-m-pane__body-section--bordered {
+    border-top: solid 1px $color-border;
+    &:first-child {
+      border-top: none;
+    }
+  }
+
+}
+
+// If no heading is present, add top padding to body element.
+.co-m-pane__heading + .co-m-pane__body,
+.co-m-pane__heading--bordered + .co-m-pane__body {
+  padding-top: 0;
+}
+
+// If the heading has a border make sure the first section gets top padding too.
+.co-m-pane__heading--bordered + .co-m-pane__body-group {
+  > .co-m-pane__body-section:first-child,
+  > .co-m-pane__body-section--bordered:first-child {
+    padding-top: 15px;
+  }
+}
