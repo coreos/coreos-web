@@ -6,7 +6,7 @@
     "angular-route": "latest",
     "angular-animate": "latest",
     "bootstrap-sass": "latest",
-    "angular-bootstrap": "latest",
+    "angular-bootstrap": "0.10.0",
     "underscore": "latest",
     "underscore.string": "latest",
     "jquery": "latest",
