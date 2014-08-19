@@ -183,14 +183,6 @@ module.exports = function(grunt) {
       }
     },
 
-    cssmin: {
-      dist: {
-        files: {
-          'dist/coreos.min.css': ['dist/coreos.css']
-        }
-      }
-    },
-
     uglify: {
       dist: {
         files: {
@@ -341,7 +333,6 @@ module.exports = function(grunt) {
     'test',
     'sass',
     'concat',
-    'cssmin',
     'ngmin',
     'uglify',
     'version',

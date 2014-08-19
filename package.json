@@ -9,7 +9,6 @@
     "grunt-contrib-concat": "latest",
     "grunt-contrib-jshint": "0.8.0",
     "grunt-contrib-uglify": "latest",
-    "grunt-contrib-cssmin": "latest",
     "grunt-contrib-watch": "latest",
     "grunt-karma": "~0.8.0",
     "karma-jasmine": "~0.1.5",
