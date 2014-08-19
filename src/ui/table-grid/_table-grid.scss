@@ -1,0 +1,32 @@
+.co-m-table-grid,
+.co-m-table-grid--bordered {
+  // All table "rows"
+  > .row {
+    padding: 10px 0;
+    font-size: 13px;
+    line-height: 13px;
+  }
+  // All table "rows" & "cells"
+  > .row,
+  [class*='col-'] {
+    vertical-align: middle;
+  }
+
+  // Recursively indent nested tables.
+  .co-m-table-grid,
+  .co-m-table-grid--bordered {
+    padding-left: 20px;
+  }
+}
+
+.co-m-table-grid--bordered > .row {
+  border-bottom: solid 1px $color-table-border;
+}
+
+// Heading rows.
+.co-m-table-grid__head {
+  color: $color-table-header;
+  text-transform: uppercase;
+  font-weight: 300;
+  padding-top: 0px;
+}
