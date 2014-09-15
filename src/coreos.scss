@@ -33,10 +33,8 @@
 @import "common/base/fonts";
 @import "common/base/effects";
 @import "common/base/icons";
-@import "common/base/ng-form";
 @import "common/base/text";
 @import "common/base/graphs";
-@import "common/base/forms";
 
 /* Animations */
 @import "common/animation/fade";
@@ -48,6 +46,7 @@
 @import "common/layout/double-pane";
 
 /* Reusable Modules */
+@import "ui/forms/forms";
 @import "ui/link/modal-link";
 @import "ui/input/invisible-input";
 @import "ui/signin/google";

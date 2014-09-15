@@ -12,6 +12,12 @@
     vertical-align: middle;
   }
 
+
+  .row.co-m-table-grid--clickable:hover {
+    background-color: $blue-bg;
+    cursor: pointer;
+  }
+
   // Recursively indent nested tables.
   .co-m-table-grid,
   .co-m-table-grid--bordered {
@@ -25,8 +31,6 @@
 
 // Heading rows.
 .co-m-table-grid__head {
-  color: $color-table-header;
-  text-transform: uppercase;
-  font-weight: 300;
+  @extend .co-m-field-head;
   padding-top: 0px;
 }

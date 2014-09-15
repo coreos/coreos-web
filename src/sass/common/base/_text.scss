@@ -8,3 +8,24 @@
   font-weight: 400;
   text-shadow: 0 1px 0 $white;
 }
+
+// Inline text next to buttons
+.co-btn-text {
+  margin: 0 10px 0 0;
+}
+
+.co-m-field-head {
+  color: $color-table-header;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.co-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.co-nowrap {
+  white-space: nowrap;
+}
