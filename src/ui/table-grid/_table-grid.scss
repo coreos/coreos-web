@@ -12,7 +12,6 @@
     vertical-align: middle;
   }
 
-
   .row.co-m-table-grid--clickable:hover {
     background-color: $blue-bg;
     cursor: pointer;
@@ -23,6 +22,18 @@
   .co-m-table-grid--bordered {
     padding-left: 20px;
   }
+}
+
+.co-m-table-grid--compact {
+  > .row {
+    padding: 5px 0;
+  }
+}
+
+.co-m-table-grid--scroll {
+  border: solid 1px $color-table-border;
+  padding: 5px 15px;
+  overflow-y: scroll;
 }
 
 .co-m-table-grid--bordered > .row {
