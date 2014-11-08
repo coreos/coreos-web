@@ -1,0 +1,18 @@
+.co-m-notice {
+  min-height: 100px;
+}
+
+.co-m-notice__title {
+  font-size: 18px;
+  line-height: 18px;
+  margin: 20px;
+  text-align: center;
+}
+
+.co-m-notice__message {
+  font-size: 14px;
+  line-height: 14px;
+  color: $color-text-muted;
+  max-width: 500px;
+  margin: 0 auto;
+}
