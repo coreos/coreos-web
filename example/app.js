@@ -41,13 +41,8 @@ app.config(function($routeProvider, $locationProvider, $httpProvider,
   //$httpProvider.interceptors.push('httpInterceptor');
 
   $routeProvider
-    .when('/example/index.html', {
-      redirectTo: '/example'
-    })
     .when('/example', {
-      controller: 'JsModulesCtrl',
-      templateUrl: '/example/js-modules.html',
-      title: 'JS Modules'
+      redirectTo: '/example/js-modules'
     })
     .when('/example/page1', {
       controller: 'Page1Ctrl',
@@ -70,8 +65,10 @@ app.config(function($routeProvider, $locationProvider, $httpProvider,
       title: 'Services'
     })
     .when('/404', {
-      templateUrl: '/404.html',
+      templateUrl: '/example/404.html',
       title: 'Not Found'
+    }).otherwise({
+      redirectTo: '/example'
     });
 })
 .run(function($rootScope, $location, CORE_EVENT) {
