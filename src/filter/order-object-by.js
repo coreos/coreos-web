@@ -8,11 +8,8 @@ angular.module('coreos.filters')
       filtered.push(item);
     });
     filtered.sort(function (a, b) {
-      return (a[field] > b[field]);
+      return reverse ? (a[field] < b[field]) : (a[field] > b[field]);
     });
-    if (reverse) {
-      filtered.reverse();
-    }
     return filtered;
   };
 });
