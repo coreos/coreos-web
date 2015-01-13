@@ -4,11 +4,9 @@
  */
 
 // TDOO(sym3tri): add hover text.
-
-'use strict';
-
 angular.module('coreos.ui')
 .directive('coDonut', function(d3, _) {
+  'use strict';
 
   return {
 

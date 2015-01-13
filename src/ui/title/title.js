@@ -4,11 +4,9 @@
  * Keeps the title tag updated.
  */
 
-'use strict';
 angular.module('coreos.ui')
-
-
 .directive('coTitle', function() {
+  'use strict';
 
   return {
     transclude: false,

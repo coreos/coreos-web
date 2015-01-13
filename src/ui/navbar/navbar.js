@@ -3,11 +3,10 @@
  * Top navbar which inlcudes nav links.
  */
 
-
-'use strict';
 angular.module('coreos.ui')
 
 .directive('coNavbar', function(configSvc) {
+  'use strict';
 
   return {
     templateUrl: '/coreos.ui/navbar/navbar.html',
@@ -28,6 +27,7 @@ angular.module('coreos.ui')
  * Will automatically add the 'active' class based on the route.
  */
 .directive('coNavbarLink', function($location) {
+  'use strict';
 
   return {
     templateUrl: '/coreos.ui/navbar/navbar-link.html',
@@ -51,6 +51,7 @@ angular.module('coreos.ui')
  * Optional dropdown menu to put in the right of the navbar.
  */
 .directive('coNavbarDropdown', function() {
+  'use strict';
 
   return {
     templateUrl: '/coreos.ui/navbar/navbar-dropdown.html',
@@ -63,4 +64,3 @@ angular.module('coreos.ui')
   };
 
 });
-

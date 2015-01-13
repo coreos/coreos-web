@@ -27,10 +27,9 @@
  *    });
  */
 
-
-'use strict';
-
 angular.module('coreos.services').provider('pollerSvc', function() {
+  'use strict';
+
   var settings = {},
       pollers = {};
 

@@ -5,10 +5,9 @@
  * leaves much to be desired.
  */
 
-'use strict';
-
 angular.module('coreos.services').factory('cookieSvc',
     function($window, timeSvc) {
+  'use strict';
 
   return {
 

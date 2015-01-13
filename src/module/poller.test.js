@@ -1,7 +1,5 @@
-'use strict';
-
 describe('coreos.services.pollerSvc', function () {
-
+  'use strict';
 
   var pollerSvcProvider, pollerSvc, mockScope, $timeout, mockPromise, $q;
 

@@ -3,11 +3,11 @@
  * A toggle button.
  */
 
-'use strict';
 
 angular.module('coreos.ui')
 
 .directive('coToggle', function() {
+  'use strict';
 
   return {
     templateUrl: '/coreos.ui/toggle/toggle.html',
@@ -31,6 +31,7 @@ angular.module('coreos.ui')
 })
 
 .directive('coToggleBtn', function() {
+  'use strict';
 
   return {
     templateUrl: '/coreos.ui/toggle/toggle-btn.html',

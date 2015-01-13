@@ -5,10 +5,11 @@
  */
 
 
-'use strict';
 
 angular.module('coreos.ui')
 .directive('coToast', function() {
+  'use strict';
+
   return {
     templateUrl: '/coreos.ui/toast/toast.html',
     restrict: 'E',
@@ -24,6 +25,7 @@ angular.module('coreos.ui')
 
 angular.module('coreos.services')
 .factory('toastSvc', function($timeout) {
+  'use strict';
 
   var AUTO_DISMISS_TIME = 5000,
       service,

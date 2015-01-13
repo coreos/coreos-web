@@ -4,11 +4,11 @@
  * Loading indicator that centers itself inside its parent.
  */
 
-
-'use strict';
 angular.module('coreos.ui')
 
 .directive('coLoader', function() {
+  'use strict';
+
   return {
     templateUrl: '/coreos.ui/loader/loader.html',
     restrict: 'E',
@@ -17,6 +17,8 @@ angular.module('coreos.ui')
 })
 
 .directive('coInlineLoader', function() {
+  'use strict';
+
   return {
     templateUrl: '/coreos.ui/loader/inline-loader.html',
     restrict: 'E',

@@ -3,10 +3,9 @@
  * element is clicked on.
  */
 
-'use strict';
-
 angular.module('coreos.ui')
 .directive('coClickNav', function($location) {
+  'use strict';
 
   return {
     restrict: 'A',

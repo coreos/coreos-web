@@ -1,6 +1,5 @@
-'use strict';
-
 describe('coreos.services.apiClient', function () {
+  'use strict';
 
   var $q, $timeout, $httpBackend, apiClientProvider, apiClient, mockPromise,
     mockDiscoJson,

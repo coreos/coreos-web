@@ -1,6 +1,6 @@
-'use strict';
-
 angular.module('coreos.services').provider('configSvc', function() {
+  'use strict';
+
   var configValues = {};
 
   this.config = function(newConfig) {

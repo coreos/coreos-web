@@ -4,10 +4,11 @@
  *
  */
 
-'use strict';
 angular.module('coreos.ui')
 
 .directive('coFooter', function() {
+  'use strict';
+
   return {
     templateUrl: '/coreos.ui/footer/footer.html',
     transclude: true,
@@ -17,6 +18,8 @@ angular.module('coreos.ui')
 })
 
 .directive('coFooterLink', function() {
+  'use strict';
+
   return {
     templateUrl: '/coreos.ui/footer/footer-link.html',
     transclude: true,
@@ -34,6 +37,8 @@ angular.module('coreos.ui')
  * Convenience wrapper for doing sticky footers.
  */
 .directive('coFooterWrapper', function() {
+  'use strict';
+
   return {
     templateUrl: '/coreos.ui/footer/footer-wrapper.html',
     transclude: true,

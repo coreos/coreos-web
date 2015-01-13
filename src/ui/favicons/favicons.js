@@ -5,11 +5,11 @@
  */
 
 
-'use strict';
 angular.module('coreos.ui')
 
 .directive('coFavicons', function($compile, $rootScope, configSvc) {
-  /*jshint maxlen:false */
+  'use strict';
+  /*eslint max-len:0 */
 
   return {
     restrict: 'A',

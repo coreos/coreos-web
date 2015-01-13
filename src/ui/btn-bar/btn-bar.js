@@ -3,10 +3,9 @@
  * Wrap buttons and automatically enable/disbale and show loading indicator.
  */
 
-'use strict';
-
 angular.module('coreos.ui')
 .directive('coBtnBar', function($, $timeout, $compile) {
+  'use strict';
 
   return {
     templateUrl: '/coreos.ui/btn-bar/btn-bar.html',

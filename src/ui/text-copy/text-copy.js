@@ -1,7 +1,6 @@
-'use strict';
-
 angular.module('coreos.ui')
 .directive('coTextCopy', function() {
+  'use strict';
 
   return {
     restrict: 'A',

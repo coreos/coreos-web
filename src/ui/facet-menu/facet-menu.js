@@ -1,7 +1,8 @@
-'use strict';
 
 angular.module('coreos.ui')
 .directive('coFacetMenu', function() {
+  'use strict';
+
   return {
     templateUrl: '/coreos.ui/facet-menu/facet-menu.html',
     transclude: true,
@@ -24,6 +25,8 @@ angular.module('coreos.ui')
 
 
 .directive('coFacetMenuOption', function() {
+  'use strict';
+
   return {
     templateUrl: '/coreos.ui/facet-menu/facet-menu-option.html',
     transclude: true,

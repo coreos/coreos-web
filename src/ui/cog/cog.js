@@ -3,10 +3,10 @@
  * Display a cog icon and construct dropdown menu.
  */
 
-'use strict';
 
 angular.module('coreos.ui')
 .directive('coCog', function() {
+  'use strict';
 
   return {
     templateUrl: '/coreos.ui/cog/cog.html',

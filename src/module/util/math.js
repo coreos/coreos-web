@@ -1,7 +1,6 @@
-'use strict';
-
 angular.module('coreos.services')
 .factory('mathSvc', function(_) {
+  'use strict';
 
   return {
 
