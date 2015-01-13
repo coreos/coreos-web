@@ -1,0 +1,23 @@
+{
+  "env": {
+    "browser": true,
+    "node"   : true
+  },
+  "globals": {
+    "angular": false
+  },
+  "rules": {
+    "strict"               : true,
+    "quotes"               : "single",
+    "curly"                : true,
+    "eqeqeq"               : true,
+    "complexity"           : 10,
+    "max-depth"            : 3,
+    "max-len"              : 80,
+    "max-params"           : 20,
+    "max-statements"       : 200,
+    "new-cap"              : true,
+    "no-underscore-dangle" : false,
+    "no-eq-null"           : true
+  }
+}
