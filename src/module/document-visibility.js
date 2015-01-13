@@ -7,11 +7,10 @@
  * changes.
  */
 
-'use strict';
-
 angular.module('coreos.services')
 .factory('documentVisibilitySvc', function($rootScope, $document, _,
       CORE_EVENT) {
+  'use strict';
 
   var document = $document[0],
       features,

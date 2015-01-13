@@ -1,7 +1,6 @@
-'use strict';
-
 angular.module('coreos.services')
 .factory('interceptorErrorSvc', function($q, $rootScope, CORE_EVENT) {
+  'use strict';
 
   function parseMessage(rejection) {
     var errorMsg;

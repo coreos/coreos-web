@@ -5,10 +5,9 @@
  * NOTE: Expects a [HIGHLIGHT_CSS_CLASS] class to be defined in constants.
  */
 
-'use strict';
-
 angular.module('coreos.services')
 .factory('highlighterSvc', function($timeout, $, CORE_CONST) {
+  'use strict';
 
   var pendingTimeout;
 

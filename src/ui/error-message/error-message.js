@@ -3,11 +3,10 @@
  * Displays a message based on a promise.
  */
 
-'use strict';
 angular.module('coreos.ui')
 
-
 .provider('errorMessageSvc', function() {
+  'use strict';
 
   var formatters = {};
 
@@ -25,8 +24,8 @@ angular.module('coreos.ui')
 
 })
 
-
 .directive('coErrorMessage', function(errorMessageSvc) {
+  'use strict';
 
   return {
     templateUrl: '/coreos.ui/error-message/error-message.html',

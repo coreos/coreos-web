@@ -1,6 +1,6 @@
-'use strict';
-
 angular.module('coreos.services').provider('apiClient', function() {
+  'use strict';
+
   var settings = {},
       clientsCache = {};
 

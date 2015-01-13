@@ -1,7 +1,6 @@
-'use strict';
-
 angular.module('coreos.filters')
 .filter('utc', function(_) {
+  'use strict';
 
   function convertToUtc(date) {
     return new Date(date.getUTCFullYear(),

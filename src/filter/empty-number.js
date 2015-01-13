@@ -1,5 +1,5 @@
-'use strict';
 angular.module('coreos.filters').filter('coEmptyNumber', function(_) {
+  'use strict';
 
   /**
    * Replaces an expected numeric value with the default text if the value is

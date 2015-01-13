@@ -8,7 +8,6 @@
  */
 angular.module('coreos.ui')
 .directive('coDateRange', function(_, $modal, d3, moment, timeSvc) {
-
   'use strict';
 
   var modalConfig = {

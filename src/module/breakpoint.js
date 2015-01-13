@@ -3,11 +3,10 @@
  * TODO(sym3tri): change implementation to use window.matchMedia instead.
  */
 
-'use strict';
-
 angular.module('coreos.services')
 .factory('breakpointSvc', function(_, $window, $rootScope, CORE_CONST,
       CORE_EVENT) {
+  'use strict';
 
   var previousName;
 

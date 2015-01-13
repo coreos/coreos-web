@@ -1,7 +1,7 @@
-'use strict';
-
 angular.module('coreos.filters')
 .filter('orderObjectBy', function() {
+  'use strict';
+
   return function(items, field, reverse) {
     var filtered = [];
     angular.forEach(items, function(item) {

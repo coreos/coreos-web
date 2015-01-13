@@ -3,10 +3,10 @@
  * Highlight an item when its bound data changes.
  */
 
-'use strict';
 
 angular.module('coreos.ui')
 .directive('coHighlight', function(highlighterSvc) {
+  'use strict';
 
   return {
     restrict: 'A',

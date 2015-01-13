@@ -1,6 +1,6 @@
-'use strict';
-
 describe('coreos.filters.coEmptyNumber', function() {
+  'use strict';
+
   var coEmptyNumberFilter,
       defaultText = '&ndash;';
 

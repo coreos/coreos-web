@@ -1,7 +1,6 @@
-'use strict';
-
 angular.module('coreos.services')
 .factory('interceptorMutateSvc', function($q, $rootScope, CORE_EVENT) {
+  'use strict';
 
   // Remove last path segement of a url.
   function removeLastPath(url) {

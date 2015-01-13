@@ -3,10 +3,9 @@
  * A pie chart.
  */
 
-'use strict';
-
 angular.module('coreos.ui')
 .directive('coPie', function(d3, _) {
+  'use strict';
 
   // Default settings.
   var settings = {

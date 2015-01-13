@@ -5,10 +5,9 @@
  * without wrapping it with an extra DOM element.
  */
 
-'use strict';
-
 angular.module('coreos.ui')
 .directive('coSvg', function($, $rootScope, $compile) {
+  'use strict';
 
   return {
     template: '<div></div>',

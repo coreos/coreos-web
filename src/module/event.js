@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('coreos.events').constant('CORE_EVENT', {
   PAGE_NOT_FOUND: 'core.event.page_not_found',
   BREAKPOINT: 'core.event.breakpoint',

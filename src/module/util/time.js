@@ -1,7 +1,6 @@
-'use strict';
-
 angular.module('coreos.services')
 .factory('timeSvc', function(_, moment) {
+  'use strict';
 
   var ONE_MINUTE_IN_MS = 60 * 1000,
       ONE_HOUR_IN_MS = ONE_MINUTE_IN_MS * 60,

@@ -4,10 +4,9 @@
  * Utility service that scrolls elements into view.
  */
 
-'use strict';
-
 angular.module('coreos.services')
 .factory('scrollerSvc', function($timeout, $) {
+  'use strict';
 
   function scroll(elem) {
     elem.first()[0].scrollIntoView();

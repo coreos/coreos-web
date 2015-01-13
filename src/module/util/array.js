@@ -1,7 +1,6 @@
-'use strict';
-
 angular.module('coreos.services')
 .factory('arraySvc', function() {
+  'use strict';
 
   return {
 
