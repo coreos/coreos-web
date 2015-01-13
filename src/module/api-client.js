@@ -17,7 +17,7 @@ angular.module('coreos.services').provider('apiClient', function() {
 
     // Change underscore's template settings for path interpolation.
     _.templateSettings = {
-      interpolate : /\{(.+?)\}/g
+      interpolate: /\{(.+?)\}/g
     };
 
     function prefixCacheKey(key) {

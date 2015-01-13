@@ -1,5 +1,4 @@
 angular.module('coreos').constant('CORE_CONST', {
-  'use strict';
 
   HIGHLIGHT_CSS_CLASS: 'co-an-highlight',
 

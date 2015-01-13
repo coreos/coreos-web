@@ -20,7 +20,7 @@ angular.module('coreos.ui')
   };
 
   function midAngle(d) {
-    return d.startAngle + (d.endAngle - d.startAngle)/2;
+    return d.startAngle + (d.endAngle - d.startAngle) / 2;
   }
 
   return {
@@ -116,6 +116,8 @@ angular.module('coreos.ui')
               'translate(' + settings.width / 2 + ',' +
                 settings.height / 2 + ')')
           .on('click', function() {
+            /*global console:1*/
+            /*eslint no-console:0*/
             console.log(scope.otherValues);
           });
 
@@ -189,7 +191,7 @@ angular.module('coreos.ui')
               var pos = outerArc.centroid(d2);
               pos[0] = settings.radius * 1.5 * (midAngle(d2) < Math.PI ?
                 1 : -1);
-              return 'translate('+ pos +')';
+              return 'translate(' + pos + ')';
             };
           })
           .styleTween('text-anchor', function(d){
@@ -250,7 +252,7 @@ angular.module('coreos.ui')
         var values, sum, othersItem, others;
         scope.pieValues = values = _.clone(scope.values);
         if (!settings.minPercent || settings.minPercent <= 0 ||
-            values.length <=2) {
+            values.length <= 2) {
           return;
         }
 
@@ -302,13 +304,13 @@ angular.module('coreos.ui')
         }
 
         function trimLength() {
-          var sortedValues, i, currItem;
+          var i, currItem;
           // If there are still too many items start plucking off values in asc
           // order until the list is small enough.
           if (values.length <= settings.maxItems) {
             return;
           }
-          sortedValues = values.sort(function(a, b) {
+          values.sort(function(a, b) {
             return d3.ascending(valueFn(a), valueFn(b));
           });
           i = 0;

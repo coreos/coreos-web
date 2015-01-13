@@ -9,7 +9,7 @@ angular.module('coreos.ui')
 
 .directive('coFavicons', function($compile, $rootScope, configSvc) {
   'use strict';
-  /*jshint maxlen:false */
+  /*eslint max-len:0 */
 
   return {
     restrict: 'A',

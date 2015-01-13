@@ -21,7 +21,7 @@ angular.module('coreos.ui')
     link: function(scope, elem, attrs) {
       var containerEl, html, newScope;
       newScope = $rootScope.$new();
-      html = '<div class="co-m-svg" '+
+      html = '<div class="co-m-svg" ' +
               'ng-class="classes" ng-style="style" ng-include="src"></div>';
       newScope.style = {};
       if (scope.width) {
