@@ -5,7 +5,7 @@ Common stylesheets and AnguarlJS JavaScript ui components for CoreOS web apps.
 ## Setup
 
 ```
-npm install -g grunt-cli
+npm install -g gulp
 npm install
 bower install
 ```
@@ -13,7 +13,7 @@ bower install
 ## Build
 
 Simple build:
-- run `grunt`  
+- run `gulp`
 - copy all files out of `/dist`
 
 Build & bump other project:  
@@ -26,6 +26,5 @@ This will build everything, then copy the resulting assets to your project direc
 
 
 ## Run Examples
-- Start a static webserver like `python -m SimpleHTTPServer 8001` or similar.
-- Run `grunt dev`
-- Browse to `http://localhost:8001/examples`
+- Run `gulp`
+- Browse to `http://localhost:9000/examples`
