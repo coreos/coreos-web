@@ -115,7 +115,7 @@ gulp.task('sass', function () {
     // Bootstrap
     var bootstrapStream = gulp.src('ext/style/bootstrap/bootstrap.scss')
       .pipe(sass({
-        includePaths: ['bower_components/bootstrap-sass/lib', 'src/sass'],
+        includePaths: ['bower_components/bootstrap-sass/assets/stylesheets/bootstrap', 'src/sass'],
         outputStyle: 'nested'
       }))
       .pipe(gulp.dest('dist'));
