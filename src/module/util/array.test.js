@@ -1,6 +1,5 @@
-'use strict';
-
 describe('coreos.services.util.arraySvc', function() {
+  'use strict';
   var arraySvc, testArray;
 
   // Load the module.

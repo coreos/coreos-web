@@ -1,7 +1,7 @@
 describe('coreos.services.apiClient', function () {
   'use strict';
 
-  var $q, $timeout, $httpBackend, apiClientProvider, apiClient, mockPromise,
+  var $httpBackend, apiClientProvider, apiClient,
     mockDiscoJson,
     discoUrl = 'http://mock.com/example/discovery.json',
     settingsObj = {
@@ -27,10 +27,7 @@ describe('coreos.services.apiClient', function () {
     // Kickstart the injectors previously registered with angular.mock.module.
     // Inject instance of service.
     inject(function($injector) {
-      $q = $injector.get('$q');
-      $timeout = $injector.get('$timeout');
       $httpBackend = $injector.get('$httpBackend');
-      mockPromise = $injector.get('mocks.promise');
       mockDiscoJson = $injector.get('mocks.discovery');
       apiClient = $injector.get('apiClient');
     });
