@@ -32,9 +32,14 @@
 }
 
 // Standard body element with no inner sections.
-.co-m-pane__body {
+.co-m-pane__body,
+.co-m-pane__body--bordered {
   @include clearfix();
   padding: 30px 30px 30px 30px;
+}
+
+.co-m-pane__body--bordered {
+  border-bottom: solid 1px $color-border;
 }
 
 // Wrapper for 'body-section' elements.

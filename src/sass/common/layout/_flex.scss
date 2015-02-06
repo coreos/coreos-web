@@ -1,0 +1,21 @@
+// flex-group wraps flex-items
+.flex-group {
+}
+// flex-items are block elements that turn into flexbox layouts on large screens.
+.flex-item {
+  display: block;
+}
+
+@media all and (min-width: 800px) {
+  .flex-group {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  .flex-spacer {
+    flex: 0 0 1px;
+    background-color: $color-border;
+  }
+  .flex-item {
+    flex: 1 1 0px;
+  }
+}

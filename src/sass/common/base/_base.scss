@@ -37,26 +37,3 @@ kbd {
   border: solid 1px $gray-light;
   padding: 4px 8px;
 }
-
-input[type="number"] {
-  max-width: 100px;
-  &::-webkit-inner-spin-button,
-  &::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-}
-
-input[type="radio"] {
-  margin-right: 5px;
-}
-
-.modal {
-  .form-row {
-    margin-bottom: 20px;
-  }
-
-  .form-row:last-child {
-    margin-bottom: 0px;
-  }
-}

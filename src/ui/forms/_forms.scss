@@ -1,0 +1,57 @@
+input[type="number"] {
+  max-width: 100px;
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+// angular-specific classes
+.ng-dirty.ng-invalid {
+  border-color: $red;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.co-m-radio-desc {
+  margin-left: 23px;
+}
+
+.co-m-inline-field {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.co-m-form-row,
+.form-row {
+  margin-bottom: 20px;
+}
+
+.form-row:last-child {
+  margin-bottom: 0px;
+}
+
+.co-m-form-col {
+  max-width: 600px;
+}
+
+.co-m-form-field-xs {
+  max-width: 100px;
+}
+
+.co-m-form-field-sm {
+  max-width: 150px;
+}
+
+.co-m-form-field-md {
+  max-width: 215px;
+}
+
+.co-m-form-field-lg {
+  max-width: 300px;
+}
