@@ -5,6 +5,10 @@
     return $window._;
   });
 
+  angular.module('underscore.string', []).factory('s', function($window) {
+    return $window.s;
+  });
+
   angular.module('jquery', []).factory('$', function($window) {
     return $window.$;
   });
@@ -20,7 +24,8 @@
   angular.module('coreos.services', [
     'coreos.events',
     'underscore',
-    'jquery'
+    'jquery',
+    'underscore.string'
   ]);
   angular.module('coreos.ui', [
     'coreos.events',

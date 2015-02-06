@@ -1,5 +1,5 @@
 angular.module('coreos.services')
-.factory('pathSvc', function(_) {
+.factory('pathSvc', function(_, s) {
   'use strict';
 
   return {
@@ -10,7 +10,7 @@ angular.module('coreos.services')
     join: function() {
       var parts = _.toArray(arguments);
       parts = parts.map(function(p) {
-        return _.str.trim(_.str.clean(p), '/');
+        return s.trim(s.clean(p), '/');
       });
       return parts.join('/');
     }
