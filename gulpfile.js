@@ -344,5 +344,5 @@ gulp.task('serve', ['lint', 'watch', 'connect']);
 /**
  * Default prod build task
  */
-gulp.task('compile:prod', ['templates', 'sass', 'concat', 'annotate', 'uglify', 'copy', 'version', 'clean:postdist']);
+gulp.task('compile:prod', ['lint', 'templates', 'sass', 'concat', 'annotate', 'uglify', 'copy', 'version', 'clean:postdist']);
 gulp.task('default', ['compile:prod']);
