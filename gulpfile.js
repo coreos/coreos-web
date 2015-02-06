@@ -259,11 +259,11 @@ gulp.task('templates', ['html2js:coreos', 'html2js:svg']);
 
 /**
  * Connect task
- * This task will spawn a web server on port 9000
+ * This task will spawn a web server on port 9001
  */
 gulp.task('connect', ['watch'], function() {
   connect.server({
-    port: 9000,
+    port: 9001,
     host: '0.0.0.0',
     base: '.',
     livereload: true,
