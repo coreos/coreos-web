@@ -329,14 +329,6 @@ gulp.task('version', ['copy'], function() {
 });
 
 /**
- * Build task
- */
-gulp.task('build', ['clean'], function() {
-  gulp.start('compile:prod');
-});
-gulp.task('compile:prod', ['templates', 'sass', 'concat', 'annotate', 'uglify', 'copy', 'version', 'clean:postdist']);
-
-/**
  * Dev task
  */
 gulp.task('dev', ['clean'], function() {
@@ -350,6 +342,7 @@ gulp.task('compile:dev', ['templates', 'copy', 'sass']);
 gulp.task('serve', ['lint', 'watch', 'connect']);
 
 /**
- * Default task
+ * Default prod build task
  */
-gulp.task('default', ['serve']);
+gulp.task('compile:prod', ['templates', 'sass', 'concat', 'annotate', 'uglify', 'copy', 'version', 'clean:postdist']);
+gulp.task('default', ['compile:prod']);

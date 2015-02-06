@@ -26,5 +26,6 @@ This will build everything, then copy the resulting assets to your project direc
 
 
 ## Run Examples
-- Run `gulp`
+- Run `gulp dev`
+- Run `gulp serve`
 - Browse to `http://localhost:9001/examples`
