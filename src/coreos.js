@@ -1,8 +1,13 @@
 (function() {
   'use strict';
 
+  // formally define non-angular external dependencies
   angular.module('underscore', []).factory('_', function($window) {
     return $window._;
+  });
+
+  angular.module('underscore.string', []).factory('s', function($window) {
+    return $window.s;
   });
 
   angular.module('jquery', []).factory('$', function($window) {
@@ -20,7 +25,8 @@
   angular.module('coreos.services', [
     'coreos.events',
     'underscore',
-    'jquery'
+    'jquery',
+    'underscore.string'
   ]);
   angular.module('coreos.ui', [
     'coreos.events',
@@ -40,13 +46,9 @@
     'coreos-templates-html',
     'coreos-templates-svg',
 
-    // External deps.
+    // other external deps
     'ngRoute',
     'ngAnimate',
-    'ui.bootstrap',
-    'underscore',
-    'jquery',
-    'd3'
   ])
   .config(function($compileProvider) {
     // Allow irc links.

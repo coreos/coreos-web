@@ -1,6 +1,5 @@
-'use strict';
-
 describe('coreos.services.util.mathSvc', function() {
+  'use strict';
   var mathSvc;
 
   // Load the module.
@@ -12,11 +11,11 @@ describe('coreos.services.util.mathSvc', function() {
   }));
 
   it('adds arbitrary number arguments', function() {
-    expect(mathSvc.sum(1,2,3)).toBe(6);
+    expect(mathSvc.sum(1, 2, 3)).toBe(6);
   });
 
   it('adds an array of numbers', function() {
-    expect(mathSvc.sum([1,2,3])).toBe(6);
+    expect(mathSvc.sum([1, 2, 3])).toBe(6);
   });
 
 });

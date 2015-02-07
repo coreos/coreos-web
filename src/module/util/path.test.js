@@ -1,6 +1,5 @@
-'use strict';
-
 describe('coreos.services.util.pathSvc', function() {
+  'use strict';
   var pathSvc;
 
   // Load the module.

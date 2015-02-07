@@ -201,8 +201,8 @@ angular.module('coreos.ui')
     }
   };
 
-  $scope.$watch('utc', function(utc) {
-    if (utc) {
+  $scope.$watch('utc', function(utcVal) {
+    if (utcVal) {
       $scope.toggleUtcText = 'using UTC time';
     } else {
       $scope.toggleUtcText = 'using Local time';

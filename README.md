@@ -3,7 +3,6 @@
 Common stylesheets and AnguarlJS JavaScript ui components for CoreOS web apps.
 
 ## Setup
-
 ```
 npm install -g gulp
 npm install
@@ -11,7 +10,6 @@ bower install
 ```
 
 ## Build
-
 Simple build:
 - run `gulp`
 - copy all files out of `/dist`
@@ -26,5 +24,10 @@ This will build everything, then copy the resulting assets to your project direc
 
 
 ## Run Examples
-- Run `gulp`
-- Browse to `http://localhost:9000/examples`
+- Run `gulp dev`
+- Run `gulp serve`
+- Browse to `http://localhost:9001/examples`
+
+
+## JavaScript Requirements
+This library depends on and assumes compatible versions of all external libraries included in [src/coreos.js](blob/master/src/coreos.js).
