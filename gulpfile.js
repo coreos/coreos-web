@@ -174,7 +174,7 @@ gulp.task('annotate', ['concat:js'], function() {
 gulp.task('copy:fonts', function() {
   return gulp.src([
     'bower_components/font-awesome/fonts/*',
-    'bower_components/bootstrap-sass/fonts/*',
+    'bower_components/bootstrap-sass/assets/fonts/bootstrap/*',
     'src/fonts/*'
   ])
     .pipe(gulp.dest('dist/fonts'));
