@@ -1,6 +1,7 @@
 (function() {
   'use strict';
 
+  // formally define non-angular external dependencies
   angular.module('underscore', []).factory('_', function($window) {
     return $window._;
   });
@@ -45,13 +46,9 @@
     'coreos-templates-html',
     'coreos-templates-svg',
 
-    // External deps.
+    // other external deps
     'ngRoute',
     'ngAnimate',
-    'ui.bootstrap',
-    'underscore',
-    'jquery',
-    'd3'
   ])
   .config(function($compileProvider) {
     // Allow irc links.
