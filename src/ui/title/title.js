@@ -18,7 +18,15 @@ angular.module('coreos.ui')
       $scope.pageTitle = '';
       $scope.defaultTitle = null;
       $rootScope.$on('$routeChangeSuccess', function() {
-        $scope.pageTitle = $route.current.title || $route.current.$$route.title;
+        if (!$route.current) {
+          return;
+        }
+        if ($route.current.title) {
+          $scope.pageTitle = $route.current.title;
+        }
+        if ($route.current.$$route && $route.current.$$route.title) {
+          $scope.pageTitle = $route.current.$$route.title;
+        }
       });
     },
     link: function(scope, elem) {
