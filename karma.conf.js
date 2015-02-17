@@ -16,7 +16,6 @@ module.exports = function(config) {
       'bower_components/angular-animate/angular-animate.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'bower_components/underscore/underscore.js',
-      'bower_components/underscore.string/dist/underscore.string.js',
       'bower_components/d3/d3.js',
       'bower_components/angular-mocks/angular-mocks.js',
 
