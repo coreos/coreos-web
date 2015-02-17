@@ -8,11 +8,12 @@ var gulp       = require('gulp'),
     liveReload = require('connect-livereload'),
     karma      = require('karma').server,
 
+    runSequence = require('run-sequence'),
     rename     = require('gulp-rename'),
     sass       = require('gulp-sass'),
     uglify     = require('gulp-uglify'),
     concat     = require('gulp-concat'),
-    annotate   = require('gulp-ng-annotate'),
+    ngAnnotate   = require('gulp-ng-annotate'),
     ngHtml2Js  = require('gulp-ng-html2js'),
     connect    = require('gulp-connect'),
     eslint     = require('gulp-eslint');
@@ -20,18 +21,18 @@ var gulp       = require('gulp'),
 /**
  * Cleaning task, cleans out folders before a build
  */
-gulp.task('clean', function (cb) {
+gulp.task('clean', function(cb) {
   del([
     '.tmp/**',
     '.sass-cache/**',
     'dist/**'
-  ], cb);
+  ], { force: true }, cb);
 });
 
 /**
  * Clean post dist files
  */
-gulp.task('clean:postdist', ['concat'], function(cb) {
+gulp.task('clean:postdist', function(cb) {
   del([
     'dist/bootstrap.css',
     'dist/font-awesome.css',
@@ -150,8 +151,8 @@ gulp.task('concat:js', ['templates'], function() {
     '!src/**/*.test.js',
     'dist/*.js'
   ])
-    .pipe(concat('coreos.js'))
-    .pipe(gulp.dest('dist'));
+  .pipe(concat('coreos.js'))
+  .pipe(gulp.dest('dist'));
 });
 
 /**
@@ -164,6 +165,7 @@ gulp.task('concat', ['concat:css', 'concat:js']);
  */
 gulp.task('annotate', ['concat:js'], function() {
   return gulp.src('dist/coreos.js')
+    .pipe(ngAnnotate())
     .pipe(rename('coreos.min.js'))
     .pipe(gulp.dest('dist'));
 });
@@ -284,7 +286,6 @@ gulp.task('connect', ['watch'], function() {
  * Gulp watcher to notify livereload
  */
 gulp.task('watch', function () {
-
   gulp.watch([
     'example/**/*.js',
     'src/**/*.js'
@@ -304,7 +305,7 @@ gulp.task('reload', function() {
       'example/**',
       'src/**'
     ])
-      .pipe(connect.reload());
+    .pipe(connect.reload());
 });
 
 /**
@@ -316,7 +317,7 @@ gulp.task('test', ['lint', 'lint:tests', 'test:unit']);
  * Version task
  * Create a version.json file based on the bower config version.
  */
-gulp.task('version', ['copy'], function() {
+gulp.task('version', function(cb) {
   var bowerFile   = require('./bower.json');
   var versionFile = __dirname + '/dist/version.json';
 
@@ -325,7 +326,8 @@ gulp.task('version', ['copy'], function() {
     version: bowerFile.version
   };
 
-  return fs.writeFile(versionFile, JSON.stringify(versionInfo, null, 2) + '\n');
+  fs.mkdirSync(__dirname + '/dist');
+  fs.writeFile(versionFile, JSON.stringify(versionInfo, null, 2) + '\n', cb);
 });
 
 /**
@@ -342,7 +344,18 @@ gulp.task('compile:dev', ['templates', 'copy', 'sass']);
 gulp.task('serve', ['lint', 'watch', 'connect']);
 
 /**
- * Default prod build task
+ * Compile all prod assets.
  */
-gulp.task('compile:prod', ['lint', 'templates', 'sass', 'concat', 'annotate', 'uglify', 'copy', 'version', 'clean:postdist']);
-gulp.task('default', ['compile:prod']);
+gulp.task('compile:prod', ['concat', 'copy', 'version']);
+
+gulp.task('package', function(cb) {
+  // run in order
+  runSequence(
+    'clean',
+    'compile:prod',
+    'uglify',
+    'clean:postdist',
+    cb);
+});
+
+gulp.task('default', ['package']);
