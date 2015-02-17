@@ -15,8 +15,8 @@ source .bumpcfg
 DIST_PATH=./dist/
 DEST_PATH=${!DEST}
 
-echo Running grunt...
-grunt
+echo Running gulp...
+gulp
 
 echo "Copying assets from $DIST_PATH to $DEST_PATH"
 cp -r $DIST_PATH $DEST_PATH
