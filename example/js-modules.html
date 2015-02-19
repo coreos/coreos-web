@@ -33,9 +33,9 @@
       </div>
       <div class="panel-body">
         <p>The toast widget listens for any notification service messages</p>
-        <a href="#" ng-click="toastSvc.info('some info text')">display info message</a>
+        <a href="javascript:;" ng-click="toastSvc.info('some info text')">display info message</a>
         <br/>
-        <a href="#" ng-click="toastSvc.error('some error text')">display error message</a>
+        <a href="javascript:;" ng-click="toastSvc.error('some error text')">display error message</a>
       </div>
     </div>
   </div>
@@ -77,7 +77,7 @@
         co-error-message
       </div>
       <div class="panel-body">
-        <div><a href="#" ng-click="generateErrorMessagePromise()">generate promise</a></div>
+        <div><a href="javascript:;" ng-click="generateErrorMessagePromise()">generate promise</a></div>
         <div><co-error-message message="that was bad...mkay" promise="errorMessagePromise"></co-error-message></div>
       </div>
     </div>
