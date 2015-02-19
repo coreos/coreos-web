@@ -13,7 +13,7 @@
     "x32": ""
   },
   "labels": [],
-  "rootUrl": "http://localhost:9090/",
+  "rootUrl": "http://localhost:9001/example/",
   "servicePath": "mock/v1/",
   "batchPath": "batch",
   "parameters": {},
