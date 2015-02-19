@@ -19,3 +19,8 @@
   text-align: left;
   margin: 0px;
 }
+
+// HACK(sym3tri): fixes incompatibility between anguarl-bootstrap and latest bootstrap.
+.modal-backdrop {
+  height: 10000px;
+}
