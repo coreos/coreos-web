@@ -127,9 +127,19 @@ gulp.task('sass', function () {
 /**
  * Uglify task
  */
-gulp.task('uglify', ['annotate'], function() {
+gulp.task('uglify', ['uglify:annotate'], function() {
   return gulp.src('dist/coreos.min.js')
     .pipe(uglify())
+    .pipe(gulp.dest('dist'));
+});
+
+/**
+ * ngAnnotate for Angular
+ */
+gulp.task('uglify:annotate', function() {
+  return gulp.src('dist/coreos.js')
+    .pipe(ngAnnotate())
+    .pipe(rename('coreos.min.js'))
     .pipe(gulp.dest('dist'));
 });
 
@@ -159,16 +169,6 @@ gulp.task('concat:js', ['templates'], function() {
  * Combined concat tasks
  */
 gulp.task('concat', ['concat:css', 'concat:js']);
-
-/**
- * ngAnnotate for Angular
- */
-gulp.task('annotate', ['concat:js'], function() {
-  return gulp.src('dist/coreos.js')
-    .pipe(ngAnnotate())
-    .pipe(rename('coreos.min.js'))
-    .pipe(gulp.dest('dist'));
-});
 
 /**
  * Copy fonts
