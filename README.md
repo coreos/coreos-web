@@ -30,4 +30,4 @@ This will build everything, then copy the resulting assets to your project direc
 
 
 ## JavaScript Requirements
-This library depends on and assumes compatible versions of all external libraries included in [src/coreos.js](blob/master/src/coreos.js).
+This library depends on and assumes compatible versions of all external libraries included in [src/coreos.js](src/coreos.js).
