@@ -46,7 +46,9 @@
       </div>
       <div class="panel-body">
         <p>size: large, anchor: left</p>
-        <co-cog options="cogOptions" size="large" anchor="left"></co-cog>
+        <div ng-click="logClick('clicked')">
+          <co-cog options="cogOptions" size="large" anchor="left"></co-cog>
+        </div>
         <p>size: small, anchor: right</p>
         <co-cog options="cogOptions" size="small" anchor="right"></co-cog>
       </div>
