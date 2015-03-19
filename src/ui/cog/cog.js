@@ -13,7 +13,6 @@ angular.module('coreos.ui')
     restrict: 'E',
     replace: true,
     scope: {
-      'apps': '=',
       'options': '=',
       'size': '@',
       'anchor': '@'
