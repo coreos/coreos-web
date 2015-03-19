@@ -23,6 +23,11 @@ angular.module('app')
     }
   ];
 
+  // for debugging evnet bubbling
+  $scope.logClick = function(txt) {
+    console.log(txt);
+  };
+
   // btn-bar
   $scope.generateBtnBarPromise = function() {
     var d = $q.defer();
