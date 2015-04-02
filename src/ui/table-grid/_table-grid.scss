@@ -1,13 +1,13 @@
-.co-m-table-grid,
-.co-m-table-grid--bordered {
-  // All table "rows"
-  > .row {
-    padding: 10px 0;
+.co-m-table-grid {
+  // All table-grid "rows"
+  .row {
     font-size: 13px;
     line-height: 13px;
+    margin: 0;
   }
-  // All table "rows" & "cells"
-  > .row,
+
+  // All table-grid "rows" & "cells"
+  .row,
   [class*='col-'] {
     vertical-align: middle;
   }
@@ -18,16 +18,24 @@
   }
 
   // Recursively indent nested tables.
-  .co-m-table-grid,
-  .co-m-table-grid--bordered {
+  .co-m-table-grid {
     padding-left: 20px;
   }
 }
 
-.co-m-table-grid--compact {
-  > .row {
-    padding: 5px 0;
-  }
+.co-m-table-grid__body {
+  min-height: 50px;
+  position: relative;
+  width: 100%;
+}
+
+// Default row padding
+.co-m-table-grid > .co-m-table-grid__body > .row {
+  padding: 10px 0;
+}
+
+.co-m-table-grid--compact > .co-m-table-grid__body > .row {
+  padding: 5px 0;
 }
 
 .co-m-table-grid--scroll {
@@ -36,12 +44,15 @@
   overflow-y: scroll;
 }
 
-.co-m-table-grid--bordered > .row {
-  border-bottom: solid 1px $color-table-border;
+.co-m-table-grid--bordered {
+  > .co-m-table-grid__head,
+  > .co-m-table-grid__body > .row {
+    border-bottom: solid 1px $color-table-border;
+  }
 }
 
 // Heading rows.
 .co-m-table-grid__head {
   @extend .co-m-field-head;
-  padding-top: 0px;
+  padding: 10px 0;
 }
