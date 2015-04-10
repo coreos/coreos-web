@@ -13,6 +13,9 @@ angular.module('coreos.ui')
     transclude: true,
     restrict: 'E',
     replace: true,
+    scope: {
+      logoSrc: '@',
+    },
     controller: function($scope) {
       $scope.config = configSvc.get();
       $scope.isCollapsed = true;
