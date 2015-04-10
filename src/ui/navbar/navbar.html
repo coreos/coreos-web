@@ -5,7 +5,7 @@
       <span class="glyphicon glyphicon-align-justify"></span>
     </button>
     <a ng-href="{{config.siteBasePath}}" class="navbar-brand">
-      <co-svg class="co-m-navbar__logo" src="/coreos.svg/logo.svg"></co-svg>
+      <co-svg ng-if="logoSrc" class="co-m-navbar__logo" src="{{logoSrc}}"></co-svg>
     </a>
   </div>
 
