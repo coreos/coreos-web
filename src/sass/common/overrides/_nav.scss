@@ -1,5 +1,7 @@
 .navbar {
   min-height: 46px;
+  border: 0px;
+  border-radius: 0;
 }
 
 .navbar-nav > li > a {
@@ -10,10 +12,6 @@
   padding: 0;
   position: relative;
   height: auto;
-}
-
-.navbar-fixed-top {
-  border: 0px;
 }
 
 .navbar-toggle {
