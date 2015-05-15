@@ -10,8 +10,8 @@ angular.module('app')
   // cog
   $scope.cogOptions = [
     {
-      'label': 'home link',
-      'href': '/example',
+      'label': 'css page link',
+      'href': '/example/css-modules',
       'weight': 100
     },
     {

@@ -5,7 +5,7 @@
 
 
 angular.module('coreos.ui')
-.directive('coCog', function() {
+.directive('coCog', function($location) {
   'use strict';
 
   return {
@@ -33,6 +33,8 @@ angular.module('coreos.ui')
         $event.stopPropagation();
         if (option.callback) {
           option.callback();
+        } else if (option.href) {
+          $location.url(option.href);
         }
         $scope.status.isopen = false;
       };
