@@ -291,6 +291,10 @@ gulp.task('watch', function () {
     'src/**/*.js'
   ], ['lint']);
 
+  gulp.watch([
+    'src/ui/**/*.html'
+  ], ['templates']);
+
   return gulp.watch([
     'example/**',
     'src/**'
