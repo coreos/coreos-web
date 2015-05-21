@@ -147,7 +147,12 @@ gulp.task('uglify:annotate', function() {
  * Concat CSS task
  */
 gulp.task('concat:css', ['sass'], function() {
-  return gulp.src('dist/*.css')
+  // NOTE: not globbing here because CSS ordering matters.
+  return gulp.src([
+      'dist/bootstrap.css',
+      'dist/font-awesome.css',
+      'dist/coreos.css',
+     ])
     .pipe(concat('coreos.css'))
     .pipe(gulp.dest('dist'));
 });
