@@ -3,6 +3,7 @@
   font-size: $font-size-md;
   font-weight: 200;
   white-space: nowrap;
+  cursor: pointer;
   &:hover,
   &:visited {
     color: $white;
