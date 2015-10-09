@@ -30,11 +30,11 @@
 }
 
 // Default row padding
-.co-m-table-grid > .co-m-table-grid__body > .row {
+.co-m-table-grid .co-m-table-grid__body .row {
   padding: 10px 0;
 }
 
-.co-m-table-grid--compact > .co-m-table-grid__body > .row {
+.co-m-table-grid--compact .co-m-table-grid__body .row {
   padding: 5px 0;
 }
 
@@ -45,8 +45,8 @@
 }
 
 .co-m-table-grid--bordered {
-  > .co-m-table-grid__head,
-  > .co-m-table-grid__body > .row {
+  .co-m-table-grid__head,
+  .co-m-table-grid__body .row {
     border-bottom: solid 1px $color-table-border;
   }
 }
