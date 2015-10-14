@@ -8,3 +8,9 @@
     @content;
   }
 }
+
+@mixin co-x-media-mobile() {
+  @media (max-width: 767px) {
+    @content;
+  }
+}

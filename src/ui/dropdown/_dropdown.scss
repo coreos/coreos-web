@@ -10,4 +10,15 @@
       color: $white;
     }
   }
+
+  // Mobile overrides
+  @include co-x-media-mobile {
+    > li > a {
+      color: $blue-link;
+      &:hover {
+        background-color: $color-bg-mute;
+        color: $blue-link;
+      }
+    }
+  }
 }
