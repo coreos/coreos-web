@@ -5,3 +5,31 @@
 .dropdown-menu > li > a {
   padding: 3px 20px 3px 10px;
 }
+
+.dropdown {
+  @include co-x-media-mobile {
+    .dropdown-toggle {
+      color: $gray;
+    }
+
+    .caret {
+      display: none;
+    }
+
+    .dropdown-menu {
+      position: static;
+      float: none;
+      width: auto;
+      margin-top: 0px;
+      background-color: transparent;
+      border: 0px none;
+      box-shadow: none;
+      display: block;
+
+      > li > a {
+        line-height: 20px;
+        padding: 5px 15px 5px 25px;
+      }
+    }
+  }
+}
