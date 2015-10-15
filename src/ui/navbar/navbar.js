@@ -62,8 +62,15 @@ angular.module('coreos.ui')
     restrict: 'E',
     replace: true,
     scope: {
-      text: '@'
-    }
+      text: '@',
+      pullRight: '=',
+      pullRightClass: '@'
+    },
+    controller: function($scope) {
+      if ($scope.pullRight) {
+        $scope.pullRightClass = 'pull-right';
+      }
+    },
   };
 
 });

@@ -1,3 +1,5 @@
+@import '_config';
+
 .co-m-dropdown--dark {
   background-color: $color-bg-translucent-dark;
   border: solid 1px $color-bg-translucent-dark;
@@ -8,6 +10,17 @@
     &:hover {
       background-color: $color-bg-translucent-dark;
       color: $white;
+    }
+  }
+
+  // Mobile overrides
+  @include co-x-media-max($screen-sm) {
+    > li > a {
+      color: $blue-link;
+      &:hover {
+        background-color: $color-bg-mute;
+        color: $blue-link;
+      }
     }
   }
 }
