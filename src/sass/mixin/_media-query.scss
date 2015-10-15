@@ -9,8 +9,8 @@
   }
 }
 
-@mixin co-x-media-mobile() {
-  @media (max-width: 767px) {
+@mixin co-x-media-max($size) {
+  @media (max-width: $size) {
     @content;
   }
 }

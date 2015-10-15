@@ -1,3 +1,5 @@
+@import '_config';
+
 .dropdown-menu {
   @include border-radius(1px);
 }
@@ -7,7 +9,7 @@
 }
 
 .dropdown {
-  @include co-x-media-mobile {
+  @include co-x-media-max($screen-sm) {
     .dropdown-toggle {
       color: $gray;
       text-transform: uppercase;
