@@ -25,12 +25,14 @@
   font-size: 16px;
 }
 
-// dropdown
-.co-m-cog__dropdown--anchor-left {
+// dropdown. uib-dropdown and class templates clobber each other, so
+// we use a descendant tag here
+.co-m-cog--anchor-left .co-m-cog__dropdown {
   left: 0px;
   right: auto;
 }
-.co-m-cog__dropdown--anchor-right {
+
+.co-m-cog--anchor-right .co-m-cog__dropdown {
   right: 0px;
   left: auto;
 }
