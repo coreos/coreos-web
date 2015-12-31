@@ -15,7 +15,7 @@ describe('coreos.services.apiClient', function () {
   beforeEach(function () {
     // Initialize the service provider by injecting it to a fake module's
     // config block.
-    angular.module('testApp', function () {})
+    angular.module('testApp', [], function () {})
       .config(function(_apiClientProvider_) {
         apiClientProvider = _apiClientProvider_;
         apiClientProvider.settings(settingsObj);

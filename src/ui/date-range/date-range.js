@@ -7,7 +7,7 @@
  * Date dropdown selector.
  */
 angular.module('coreos.ui')
-.directive('coDateRange', function(_, $modal, d3, moment, timeSvc) {
+.directive('coDateRange', function(_, $uibModal, d3, moment, timeSvc) {
   'use strict';
 
   var modalConfig = {
@@ -100,7 +100,7 @@ angular.module('coreos.ui')
           utc: d3.functor(scope.utc)
         };
         // Handle custom range changes.
-        $modal.open(modalConfig)
+        $uibModal.open(modalConfig)
           .result.then(function(customRange) {
             scope.utc = customRange.utc;
             scope.start = customRange.start;
@@ -132,7 +132,7 @@ angular.module('coreos.ui')
 /**
  * Controller for modal to select custom date range.
  */
-.controller('DateRangeCustomCtrl', function($scope, $modalInstance, timeSvc,
+.controller('DateRangeCustomCtrl', function($scope, $uibModalInstance, timeSvc,
       moment, start, end, utc) {
   'use strict';
 
@@ -214,7 +214,7 @@ angular.module('coreos.ui')
   };
 
   $scope.cancel = function() {
-    $modalInstance.dismiss('cancel');
+    $uibModalInstance.dismiss('cancel');
   };
 
   $scope.resetEnd = function() {
@@ -223,7 +223,7 @@ angular.module('coreos.ui')
   };
 
   $scope.submit = function() {
-    $modalInstance.close({
+    $uibModalInstance.close({
       start: inputsToDate($scope.inputs.startDate, $scope.inputs.startTime),
       end: inputsToDate($scope.inputs.endDate, $scope.inputs.endTime),
       utc: $scope.utc

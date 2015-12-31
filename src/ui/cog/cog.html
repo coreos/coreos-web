@@ -1,7 +1,7 @@
-<div class="co-m-cog">
-  <span class="dropdown" is-open="status.isopen" ng-click="captureClick($event)">
-    <span class="co-m-cog__icon co-m-cog__icon--size-{{size}} dropdown-toggle fa fa-cog"></span>
-    <ul class="dropdown-menu co-m-cog__dropdown co-m-dropdown--dark co-m-cog__dropdown--anchor-{{anchor}}">
+<div class="co-m-cog co-m-cog--anchor-{{anchor}}">
+  <span uib-dropdown is-open="status.isopen" ng-click="captureClick($event)">
+    <span uib-dropdown-toggle class="co-m-cog__icon co-m-cog__icon--size-{{size}} fa fa-cog"></span>
+    <ul class="uib-dropdown-menu co-m-cog__dropdown co-m-dropdown--dark">
       <li ng-repeat="option in options | orderBy:'weight'">
         <a ng-click="clickHandler($event, option)" ng-bind="option.label"></a>
       </li>
