@@ -2,7 +2,7 @@
 
 [![deprecated](http://badges.github.io/stability-badges/dist/deprecated.svg)](http://github.com/badges/stability-badges)
 
-Common stylesheets and AnguarlJS JavaScript ui components for CoreOS web apps.
+Common stylesheets and AngularJS UI components for CoreOS web apps.
 
 ## Setup
 ```
